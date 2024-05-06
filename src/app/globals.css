@@ -1,4 +1,91 @@
-:root {
+/* RESET */
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+ul,
+ol,
+li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+button {
+  background-color: #fff;
+  cursor: pointer;
+
+}
+
+html,
+body {
+	height: 100%;
+  color: black;
+}
+
+main {
+	flex: 1 1 auto
+}
+
+/* ------------------------------------- */
+
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.container {
+  /* min-width: 320px; */
+  max-width: 1280px;
+  height: 150vh;
+  padding: 0px 15px;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
@@ -104,4 +191,4 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */
