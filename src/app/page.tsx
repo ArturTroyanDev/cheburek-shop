@@ -1,5 +1,5 @@
-import { Header } from "./components/Header/Header.tsx";
-import { AboutUs } from "./components/AboutUs/AboutUs.tsx";
+import { Header } from "./components/Header/Header"
+import { AboutUs } from "./components/AboutUs/AboutUs";
 
 
 export default function Home() {
