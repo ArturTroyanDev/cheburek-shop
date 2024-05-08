@@ -7,5 +7,17 @@
     background-color: rgba(201, 62, 1, 1);
     border: 1px solid rgba(201, 62, 1, 1);
     border-radius: 60px;
-    // cursor: pointer;
+    transition: .1s linear;
+}
+
+.button:hover {
+
+    background-color: rgb(255, 255, 255);
+    color: rgba(201, 62, 1, 1);
+
+}
+
+.button:active {
+    transform: scale(0.99);
+    
 }

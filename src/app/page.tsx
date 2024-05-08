@@ -1,6 +1,7 @@
 import { Header } from "./components/Header/Header";
 import { AboutUs } from "./components/AboutUs/AboutUs";
 import { Button } from "./components/Button/Button";
+import { ShoppingCart } from "./components/ShoppingCart/ShoppingCart";
 
 
 export default function Home() {
@@ -9,8 +10,7 @@ export default function Home() {
         <Header />
       <div className="container">
         <AboutUs />
-        <Button />
-        <Button />
+        <ShoppingCart />
         <Button />
       </div>
     </div>

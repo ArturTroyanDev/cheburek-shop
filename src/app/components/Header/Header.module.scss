@@ -43,16 +43,22 @@
         transform: translateY(7px);
     }
 
+}
 
+.insitutionName {
+    font-weight: 300;
 }
 
 .languageSwitcher {
-    width: 40px;
+    width: 55px;
     height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
     background: rgba(244, 241, 241, 1);
-    border-radius: 50%;
-    // p {}
-}
+    border-radius: 20px;
+    }
 
 .search {
     width: 40px;
