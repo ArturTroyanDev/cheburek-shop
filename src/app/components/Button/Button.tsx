@@ -1,22 +1,20 @@
 'use client'
-import { useState } from 'react';
+import React from 'react';
 import styles from './Button.module.scss'
 import { ShoppingCart } from '../ShoppingCart/ShoppingCart';
+import { AppContext } from '../../page';
 
 type propsType = {
     text?: string;
 };
 
 export function Button({text = 'Додати в кошик' }: propsType) {
-    const [state, setState] = useState(0);
+    const {state, setState} = React.useContext(AppContext)
 
-    const countAdd = () => {
-        setState(state + 1)
-    }
 
     return (
         
-        <button onClick={countAdd} className={styles.button}>
+        <button onClick={() => setState(state + 1)} className={styles.button}>
             {state}
         </button>
     );
