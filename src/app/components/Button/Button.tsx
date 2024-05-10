@@ -1,21 +1,24 @@
 'use client'
 import React from 'react';
 import styles from './Button.module.scss'
-import { ShoppingCart } from '../ShoppingCart/ShoppingCart';
-import { AppContext } from '../../page';
+// import { ShoppingCart } from '../ShoppingCart/ShoppingCart';
+import { ContextWrapper, TypeProvider, useProductCounter } from '@/context/contextProductsCounter';
 
-type propsType = {
-    text?: string;
-};
 
-export function Button({text = 'Додати в кошик' }: propsType) {
-    const {state, setState} = React.useContext(AppContext)
 
+export function Button({
+    text = 'Додати в кошик', }: { text?: String; }) {
+
+    const {count, setCount} = useProductCounter()
+
+        function handleClick() {
+            setCount(count + 1)
+        }
 
     return (
-        
-        <button onClick={() => setState(state + 1)} className={styles.button}>
-            {state}
+        <button onClick={handleClick} className={styles.button}>
+            {text}
         </button>
+
     );
 } 

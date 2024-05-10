@@ -18,16 +18,18 @@
 
 
 
-images
+Images
 1. JPEG - content images
 2. PNG - background images
 2. SVG - icons
 
 
+Rules, etc
+1. if export is default, the component is exported without curly brackets.
+2. 
 
-tasks
+
+Tasks
 1. Исправить проблему с липким хедером - изучить вопрос как правильно его делать
-2. Разобраться как делать состояние компонентов по видео реакт пицца на ютуб
-3. Рзаобраться как давать названия и описание комитам 
-4. Разобраться как комитить через консоль
+2. Рзаобраться как давать названия и описание комитам 
 
