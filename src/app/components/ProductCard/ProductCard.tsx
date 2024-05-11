@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styles from './ProductCard.module.scss'
-import cheburek1 from "../../../../public/icons/arrowDown.svg"
+// import cheburek1 from "../../../../public/icons/arrowDown.svg"
 // import cheburek2 from "../../../../public/foodPhotos/cheburek1_428x380px.jpg"
 // import cheburek3 from "../../../../public/foodPhotos/cheburek1_428x380px.jpg"
 // import cheburek4 from "../../../../public/foodPhotos/cheburek1_428x380px.jpg"
@@ -15,7 +15,7 @@ export function ProductCard() {
 
     return (
         <div className={styles.block}>
-            <Image className={styles.img} src={cheburek1} alt="cheburek" />
+            {/* <Image className={styles.img} src={} alt="cheburek" /> */}
             <h3 className={styles.title}>Чебурек с телятиной</h3>
             <div className={styles.price}>70₴</div>
             <Button />
