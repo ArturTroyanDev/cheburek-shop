@@ -1,14 +1,23 @@
-.button {
-    margin: 10px 0px 10px 0px;
-    // width: 93.33%; percentage of width from the product card
-    width: 280px;
-    height: 32px;
-    color: white;
-    background: rgba(201, 62, 1, 1);
-    border: 1px solid rgba(201, 62, 1, 1);
-    border-radius: 60px;
-    transition: .1s linear;
-}
+// .buttonWrap {
+//     width: max-content;
+//     height: max-content;
+
+
+
+    .button {
+        // margin: 10px 0px 10px 0px;
+        width: 92.5%; // percentage of width from the product card
+        // width: 280px;
+        height: 32px;
+        color: white;
+        background: rgba(201, 62, 1, 1);
+        border: 1px solid rgba(201, 62, 1, 1);
+        border-radius: 60px;
+        transition: .1s linear;
+    }
+// }
+
+
 
 .button:hover {
 
@@ -19,5 +28,5 @@
 
 .button:active {
     transform: scale(0.99);
-    
+
 }

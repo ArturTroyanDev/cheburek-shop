@@ -27,10 +27,11 @@ Images
 
 Rules, etc
 1. if export is default, the component is exported without curly brackets.
-2. file imports are done in the following sequence: 1. React components, photos, libraries 
+2. file imports are done in the following sequence: 1. React components, styles, photos, libraries 
 
 
 Tasks
 1. Исправить проблему с липким хедером - изучить вопрос как правильно его делать
 2. Рзаобраться как давать названия и описание комитам 
+3. Сделать сниппеты
 

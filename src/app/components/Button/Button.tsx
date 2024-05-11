@@ -9,16 +9,18 @@ import { ContextWrapper, TypeProvider, useProductCounter } from '@/context/conte
 export function Button({
     text = 'Додати в кошик', }: { text?: String; }) {
 
-    const {count, setCount} = useProductCounter()
+    const { count, setCount } = useProductCounter()
 
-        function handleClick() {
-            setCount(count + 1)
-        }
+    function handleClick() {
+        setCount(count + 1)
+    }
 
     return (
-        <button onClick={handleClick} className={styles.button}>
-            {text}
-        </button>
+        // <div className={styles.buttonWrap}>
+            <button onClick={handleClick} className={styles.button}>
+                {text}
+            </button>
+        // </div>
 
     );
 } 

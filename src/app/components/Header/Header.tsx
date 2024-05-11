@@ -10,7 +10,7 @@ export function Header() {
                     <button className={styles.burger} id="burger">
                         <span></span><span></span><span></span>
                     </button>
-                    <h1 className={styles.insitutionName}>CHEBUREK & PONCHIK </h1>
+                    <h1 className={styles.title}>CHEBUREK & PONCHIK </h1>
                     <button className={styles.languageSwitcher}>
                         <p>UA</p>
 

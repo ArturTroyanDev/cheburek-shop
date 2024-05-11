@@ -5,6 +5,7 @@ import { Button } from "./components/Button/Button";
 import { ShoppingCart } from "./components/ShoppingCart/ShoppingCart";
 import { TypeProvider } from '@/context/contextProductsCounter';
 import { ProductCard } from "./components/ProductCard/ProductCard";
+import { CardList } from "./components/CardList/CardList";
 
 
 // if export is default, the component is exported without curly brackets.
@@ -19,9 +20,15 @@ export default function Home() {
         <Header />
         <div className="container">
           <AboutUs />
-          <ProductCard/>
-          <ShoppingCart />
-          <Button />
+          <CardList>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ShoppingCart/>
+          </CardList>
         </div>
       </div>
     </TypeProvider>
