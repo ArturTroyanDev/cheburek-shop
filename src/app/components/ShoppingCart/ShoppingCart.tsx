@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from "next/image";
-import Cart from "../../../../public/icons/shoppingCart.svg"
+// import Cart from "../../../../public/icons/shoppingCart.svg"
 import styles from './ShoppingCart.module.scss'
 import { useProductCounter } from "@/context/contextProductsCounter";
 
@@ -20,7 +20,7 @@ export function ShoppingCart() {
 
     return (
         <div className={styles.cartBlock}>
-            <Image src={Cart} alt="" />
+            {/* <Image src={Cart} alt="" /> */}
                 <p>{count}</p>
 
             <p>позицій</p>
