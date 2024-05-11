@@ -4,8 +4,7 @@ import React from 'react';
 import Image from "next/image";
 import Cart from "../../../../public/icons/shoppingCart.svg"
 import styles from './ShoppingCart.module.scss'
-import { Button } from '../Button/Button'
-import { ContextWrapper, useProductCounter } from "@/context/contextProductsCounter";
+import { useProductCounter } from "@/context/contextProductsCounter";
 
 // import { AppContext } from '../../page';
 
