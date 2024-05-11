@@ -39,6 +39,7 @@ h6 {
 button {
   background-color: rgb(255, 255, 255);
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 html,

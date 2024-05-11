@@ -8,3 +8,11 @@
     max-width: 876px;
     gap: 20px;
 }
+
+@media (min-width: 510px) {
+    .list {
+        flex-direction: row;
+        // flex-wrap: wrap;
+    }
+
+}
