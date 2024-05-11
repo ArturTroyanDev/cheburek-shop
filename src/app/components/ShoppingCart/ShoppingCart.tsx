@@ -16,7 +16,7 @@ import { useProductCounter } from "@/context/contextProductsCounter";
 
 export function ShoppingCart() {
 
-    const {count, setCount} = useProductCounter()
+    const {count} = useProductCounter()
 
     return (
         <div className={styles.cartBlock}>
