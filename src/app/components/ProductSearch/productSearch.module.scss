@@ -1,0 +1,26 @@
+.searchWrapper {
+    border: 1px solid rgba(137, 137, 137, 1);
+    border-radius: 40px;
+    width: max-content;
+
+    .searchBlock {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 4px;
+        padding: 4px;
+
+
+        .loupeIcon {}
+
+        .input {
+            background: unset;
+            width: 90px;
+            height: 16px;
+            color: rgba(244, 241, 241);
+            
+        }
+
+    }
+
+}

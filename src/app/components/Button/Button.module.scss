@@ -21,18 +21,19 @@
 
 
 
+// .button:hover {
+
+//     background: rgb(255, 255, 255);
+//     color: rgba(201, 62, 1, 1);
+
+// }
+
 .button:hover {
-
-    background: rgb(255, 255, 255);
-    color: rgba(201, 62, 1, 1);
-
-}
-
-.button:focus {
     // -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .button:active {
     transform: scale(0.99);
-
+    // background: rgb(255, 255, 255);
+    // color: rgba(201, 62, 1, 1);
 }

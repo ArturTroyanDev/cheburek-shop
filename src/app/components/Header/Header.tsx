@@ -1,8 +1,9 @@
 import Image from "next/image"
+import styles from './Header.module.scss'
 import arrowDown from "../../../../public/icons/arrowDown.svg"
 import logo from "../../../../public/icons/logo.svg"
-import styles from './Header.module.scss'
 import { ShoppingCart } from "../ShoppingCart/ShoppingCart"
+import { BurgerMenu } from "../BurgerMenu/BurgerMenu"
 
 export function Header() {
     return (
@@ -10,14 +11,12 @@ export function Header() {
             <div className="container header__container">
                 <header className={styles.header}>
 
-                    <button className={styles.burger} id="burger">
-                        <span></span><span></span><span></span>
-                    </button>
+                    <BurgerMenu/>
 
                     <span className={styles.logoWrapper}>
                         <Image src={logo} alt="" />
                     </span>
-                    
+
                     <ShoppingCart />
 
                     <button className={styles.languageSwitcher}>
