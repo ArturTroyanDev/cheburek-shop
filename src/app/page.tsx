@@ -2,7 +2,7 @@ import React from "react";
 import { Header } from "./components/Header/Header";
 import { AboutUs } from "./components/AboutUs/AboutUs";
 import { Button } from "./components/Button/Button";
-import { ShoppingCart } from "./components/ShoppingCart/ShoppingCart";
+// import { ShoppingCart } from "./components/ShoppingCart/ShoppingCart";
 import { TypeProvider } from '@/context/contextProductsCounter';
 import { ProductCard } from "./components/ProductCard/ProductCard";
 import { CardList } from "./components/CardList/CardList";
@@ -19,7 +19,6 @@ export default function Home() {
       <div className="wrapper">
         <Header />
         <div className="container">
-          <AboutUs />
           <CardList>
             <ProductCard />
             <ProductCard />
@@ -27,7 +26,6 @@ export default function Home() {
             <ProductCard />
             <ProductCard />
             <ProductCard />
-            <ShoppingCart/>
           </CardList>
         </div>
       </div>
