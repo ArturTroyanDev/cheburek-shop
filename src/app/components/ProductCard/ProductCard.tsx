@@ -21,6 +21,7 @@ export function ProductCard() {
                     className={styles.img}
                     src={cheburek1}
                     alt="cheburek"
+                    placeholder="blur"
                 />
                 <h3 className={styles.title}>Чебурек с телятиной</h3>
                 <div className={styles.price}>70₴</div>
