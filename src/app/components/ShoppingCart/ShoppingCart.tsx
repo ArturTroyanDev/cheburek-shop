@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from "next/image";
-import cart from "../../../../public/icons/ShoppingCart.jpg"
+import cart from "../../../../public/icons/ShoppingCart.svg"
 import styles from './ShoppingCart.module.scss'
 import { useProductCounter } from "@/context/contextProductsCounter";
 
