@@ -14,15 +14,15 @@ import { Button } from "../Button/Button";
 export function ProductCard() {
 
     return (
-        <div className={styles.blockWrapper}>
-            <div className={styles.block}>
-                <Image
+        <div className={styles.block}>
+            <Image
 
-                    className={styles.img}
-                    src={cheburek1}
-                    alt="cheburek"
-                    placeholder="blur"
-                />
+                className={styles.img}
+                src={cheburek1}
+                alt="cheburek"
+                placeholder="blur"
+            />
+            <div className={styles.content}>
                 <h3 className={styles.title}>Чебурек с телятиной</h3>
                 <div className={styles.price}>70₴</div>
                 <Button />
