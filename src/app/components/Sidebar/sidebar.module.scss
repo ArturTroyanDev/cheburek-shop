@@ -1,14 +1,19 @@
 .sidebar {
+    position: fixed;
+    top: 56px;
     display: flex;
     flex-direction: column;
-    width: 52%;
+    width: 50%;
     height: 100vh;
     gap: 32px;
     padding: 20px 0px 0px 10px;
     background: rgba(21, 20, 19, 1);
     color: rgba(255, 255, 255);
     z-index: 30;
-    
+    left: -40%;
+    transition: left 1s;
+
+
 
     .categories {
         display: flex;
@@ -16,7 +21,6 @@
         width: max-content;
         gap: 16px;
 
-        
 
         .item {
             display: flex;
@@ -25,13 +29,15 @@
             gap: 8px;
             cursor: pointer;
 
-            title {
-
-            }
+            title {}
 
         }
 
 
     }
 
+}
+
+.active {
+    left: 0%;
 }

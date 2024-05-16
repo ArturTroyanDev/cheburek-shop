@@ -30,6 +30,7 @@ Rules, etc
 1. if export is default, the component is exported without curly brackets.
 2. file imports are done in the following sequence: 1. React, next, styles, photos, libraries and custom components
 3. dont use margin
+4. Interfaces and types are capitalized
 
 
 Tasks

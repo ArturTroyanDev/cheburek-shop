@@ -2,18 +2,20 @@
 import React from 'react';
 import styles from './Button.module.scss'
 // import { ShoppingCart } from '../ShoppingCart/ShoppingCart';
-import { ContextWrapper, TypeProvider, useProductCounter } from '@/context/contextProductsCounter';
+import { useContextValue } from '@/context/ContextValue';
 
 
 
 export function Button({
     text = 'Додати в кошик', }: { text?: String; }) {
 
-    const { count, setCount } = useProductCounter()
+    const { productCount, setProductCount } = useContextValue()
 
     function handleClick() {
-        setCount(count + 1)
+        setProductCount(productCount + 1)
     }
+
+    // console.log("componentButton: " + value)
 
     return (
         // <div className={styles.buttonWrap}>

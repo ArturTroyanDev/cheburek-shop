@@ -4,7 +4,7 @@ import React from 'react';
 import Image from "next/image";
 import cart from "../../../../public/icons/ShoppingCart.svg"
 import styles from './ShoppingCart.module.scss'
-import { useProductCounter } from "@/context/contextProductsCounter";
+import { useContextValue } from "@/context/ContextValue";
 
 // import { AppContext } from '../../page';
 
@@ -16,14 +16,17 @@ import { useProductCounter } from "@/context/contextProductsCounter";
 
 export function ShoppingCart() {
 
-    const { count } = useProductCounter()
+    const { productCount } = useContextValue()
+
+    // console.log("componentShoppingCard: " + value)
+
 
     return (
         <div className={styles.cartBlock}>
             <Image className={styles.img} src={cart} alt="bin" />
            
             <span className={styles.counterWrapper}>
-                <p className={styles.counter}>{count}</p>
+                <p className={styles.counter}>{productCount}</p>
             </span>
         </div>
     )

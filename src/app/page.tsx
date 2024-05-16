@@ -1,6 +1,6 @@
 import React from "react";
 import { Header } from "./components/Header/Header";
-import { TypeProvider } from '@/context/contextProductsCounter';
+import { TypeProvider } from '@/context/ContextValue';
 import { ProductCard } from "./components/ProductCard/ProductCard";
 import { CardList } from "./components/CardList/CardList";
 import { Sidebar } from "./components/Sidebar/Sidebar";
@@ -16,7 +16,7 @@ export default function Home() {
     <TypeProvider>
       <div className="wrapper">
         <Header />
-        {/* <Sidebar /> */}
+        <Sidebar />
         <div className="container">
           <CardList>
             <ProductCard />
