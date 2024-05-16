@@ -15,8 +15,10 @@ export default function Home() {
   return (
     <TypeProvider>
       <div className="wrapper">
+        
         <Header />
         <Sidebar />
+        
         <div className="container">
           <CardList>
             <ProductCard />

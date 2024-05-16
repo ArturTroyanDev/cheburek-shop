@@ -6,22 +6,26 @@ import cheburek from "../../../../public/foodIcons/cheburek.svg"
 import { ProductSearch } from "../ProductSearch/ProductSearch"
 import classNames from 'classnames';
 
+import { useContextValue } from "@/context/ContextValue";
+
 
 
 export function Sidebar() {
     const [active, setActive] = React.useState(false);
 
-    const switchSidebarState = () => {
-        setActive(!active)
-    }
+    const { sidebarFlag } = useContextValue()
+
+    // const switchSidebarState = () => {
+    //     setActive(!active)
+    // }
 
     const sidebarClassname = classNames(styles.sidebar, {
-        [styles.active]: active
+        [styles.active]: sidebarFlag
     })
 
 
     return (
-        <div onClick={switchSidebarState}
+        <div
             className={sidebarClassname}>
             <ProductSearch />
 

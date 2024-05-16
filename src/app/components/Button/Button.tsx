@@ -11,7 +11,7 @@ export function Button({
 
     const { productCount, setProductCount } = useContextValue()
 
-    function handleClick() {
+    function addProductCount() {
         setProductCount(productCount + 1)
     }
 
@@ -19,7 +19,7 @@ export function Button({
 
     return (
         // <div className={styles.buttonWrap}>
-            <button onClick={handleClick} className={styles.button}>
+            <button onClick={addProductCount} className={styles.button}>
                 {text}
             </button>
         // </div>

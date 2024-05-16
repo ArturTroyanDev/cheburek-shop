@@ -10,11 +10,17 @@ type containerProps = {
 type Context = {
     productCount: number, // 111111111111111111
     setProductCount: (num: number) => void 
+
+    sidebarFlag: boolean,
+    setSidebarFlag: (flag: boolean) => void 
 }
 
 const ContextState = {
     productCount: 0,
-    setProductCount: () => 0
+    setProductCount: () => 0,
+
+    sidebarFlag: false,
+    setSidebarFlag: () => false
 }
 
 
@@ -23,16 +29,10 @@ export const ContextWrapper = React.createContext<Context>(ContextState)
 export const TypeProvider = (props: containerProps) => {
 
     const [productCount, setProductCount] = React.useState<number>(0)
-
-    function handleproductCount(num: number) {
-        setProductCount(num)
-    }
-
-    // console.log("component: " + productCount)
-
+    const [sidebarFlag, setSidebarFlag] = React.useState<boolean>(false)
 
     return (
-        <ContextWrapper.Provider value={{productCount, setProductCount: handleproductCount}}>
+        <ContextWrapper.Provider value={{productCount, setProductCount, sidebarFlag, setSidebarFlag}}>
             {props.children}
         </ContextWrapper.Provider>
     );
