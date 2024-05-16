@@ -1,23 +1,16 @@
 "use client"
 import React from 'react'
-import Image from "next/image"
 import styles from "./sidebar.module.scss"
+import Image from "next/image"
 import cheburek from "../../../../public/foodIcons/cheburek.svg"
-import { ProductSearch } from "../ProductSearch/ProductSearch"
 import classNames from 'classnames';
-
+import { ProductSearch } from "../ProductSearch/ProductSearch"
 import { useContextValue } from "@/context/ContextValue";
 
 
 
 export function Sidebar() {
-    const [active, setActive] = React.useState(false);
-
-    const { sidebarFlag } = useContextValue()
-
-    // const switchSidebarState = () => {
-    //     setActive(!active)
-    // }
+    const { sidebarFlag } = useContextValue();
 
     const sidebarClassname = classNames(styles.sidebar, {
         [styles.active]: sidebarFlag

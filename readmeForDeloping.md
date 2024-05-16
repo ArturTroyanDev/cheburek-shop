@@ -33,6 +33,7 @@ Rules, etc
 4. Interfaces and types are capitalized
 
 
+
 Tasks
 1. Исправить проблему с липким хедером - изучить вопрос как правильно его делать
 2. Разобраться как давать названия и описание комитам 
@@ -41,6 +42,9 @@ Tasks
 5. Переделать лист карточек с товарами на грид
 6. Сделать так шо б при уменьшении ширины экрана уменьшались и боковые падинги на карточка с хавкой вплоть до 0. 
 7. Сделать шо б если в корзине нет товаров, т.е если счетчика нет, то корзина была по центру, а если он появляется, то корзина плавно отодвигается в блок
-8. Придумать другое название компоненту БургерМеню
+8. рассмотреть идею смены названия компоненту БургерМеню
+9. implement the function of closing the sidebar when clicking outside the menu
+10. implement closing and unclosing the sidebar with a swipe 
+11. Consider the idea of making the sidebar the full height of the screen, so that the header is underneath it
 
 

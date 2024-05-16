@@ -1,15 +1,14 @@
 .burger {
-    // display: none;
     position: relative;
     width: 40px;
     height: 40px;
     background: rgba(244, 241, 241, 1);
-    // background-color: #fff;
     border-radius: 50%;
     margin-right: 8px;
     z-index: 40;
+    transition: transform .5s, opacity .5s, bacground-color .5s;
 
-    span {
+    .stick {
         position: absolute;
         width: 20px;
         height: 1.5px;
@@ -19,12 +18,24 @@
 
     }
 
-    span:nth-child(1) {
+    .stick:nth-child(1) {
         transform: translateY(-7px);
     }
 
-    span:nth-child(3) {
+    .stick:nth-child(3) {
         transform: translateY(7px);
     }
 
+}
+
+.active .stick:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+}
+
+.active .stick:nth-child(2) {
+    opacity: 0;
+}
+
+.active .stick:nth-child(3) {
+    transform: translateX(0) rotate(-45deg);
 }
