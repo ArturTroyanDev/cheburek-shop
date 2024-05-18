@@ -46,5 +46,6 @@ Tasks
 9. implement the function of closing the sidebar when clicking outside the menu
 10. implement closing and unclosing the sidebar with a swipe 
 11. Consider the idea of making the sidebar the full height of the screen, so that the header is underneath it
+12. make icons display in sidebar component
 
 
