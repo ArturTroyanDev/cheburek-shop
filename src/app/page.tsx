@@ -4,29 +4,24 @@ import { TypeProvider } from '@/context/ContextValue';
 import { ProductCard } from "./components/ProductCard/ProductCard";
 import { CardList } from "./components/CardList/CardList";
 import { Sidebar } from "./components/Sidebar/Sidebar";
+import { productCardImages } from "./../app/components/assets/productCardData/productCardImageArray"
 
-
-// if export is default, the component is exported without curly brackets.
-
-
+console.log(productCardImages)
 
 export default function Home() {
 
   return (
     <TypeProvider>
       <div className="wrapper">
-        
+
         <Header />
         <Sidebar />
-        
+
         <div className="container">
           <CardList>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            {
+              productCardImages.map((obj) => <ProductCard image={obj.image} title={obj.title} price={obj.price} />)
+            }
           </CardList>
         </div>
       </div>

@@ -1,30 +1,34 @@
 "use client"
 import Image from 'next/image'
+// import {productCardImages} from "../assets/productCardData/productCardDataConstants"
 import styles from './ProductCard.module.scss'
-import cheburek1 from "../../../../public/foodPhotos/cheburek1_428x380px.jpg"
-import cheburek2 from "../../../../public/foodPhotos/cheburek2_428x380px.jpg"
-import cheburek3 from "../../../../public/foodPhotos/cheburek3_428x380px.jpg"
-import cheburek4 from "../../../../public/foodPhotos/cheburek4_428x380px.jpg"
-// import { CardList } from '../CardList/CardList'
 import { Button } from "../Button/Button";
 
+// console.log(productCardImages[0].image)
 
-// console.log(Cheburek)
+type Props = {
+    image: any,
+    title: string,
+    price: number,
 
-export function ProductCard() {
+}
+
+export function ProductCard({image, title, price}: Props) {
 
     return (
         <div className={styles.block}>
             <Image
-
                 className={styles.img}
-                src={cheburek1}
+                blurDataURL='none'
+                src={image}
                 alt="cheburek"
+                width={428}
+                height={380}
                 placeholder="blur"
             />
             <div className={styles.content}>
-                <h3 className={styles.title}>Чебурек с телятиной</h3>
-                <div className={styles.price}>70₴</div>
+                <h4 className={styles.title}>{title}</h4>
+                <div className={styles.price}>{price + "₴"}</div>
                 <Button />
             </div>
         </div>
