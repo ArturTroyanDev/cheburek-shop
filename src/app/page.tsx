@@ -20,7 +20,7 @@ export default function Home() {
         <div className="container">
           <CardList>
             {
-              productCardImages.map((obj) => <ProductCard image={obj.image} title={obj.title} price={obj.price} />)
+              productCardImages.map((obj, index) => <ProductCard key={index} image={obj.image} title={obj.title} price={obj.price} />)
             }
           </CardList>
         </div>
