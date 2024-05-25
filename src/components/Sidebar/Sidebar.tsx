@@ -2,13 +2,12 @@
 import React from 'react'
 import styles from "./sidebar.module.scss"
 import Image from "next/image"
-import cheburek from "../../../../public/foodIcons/cheburek.svg"
 
-import icon0 from "../../../../public/foodIcons/cheburek.svg"
-import icon1 from "../../../../public/foodIcons/doughnut.svg"
-import icon2 from "../../../../public/foodIcons/potatoes.svg"
-import icon3 from "../../../../public/foodIcons/coffee.svg"
-import icon4 from "../../../../public/foodIcons/cocoa.svg"
+import icon0 from "../../../public/categoryIcons/cheburek.svg"
+import icon1 from "../../../public/categoryIcons/doughnut.svg"
+import icon2 from "../../../public/categoryIcons/potatoes.svg"
+import icon3 from "../../../public/categoryIcons/coffee.svg"
+import icon4 from "../../../public/categoryIcons/cocoa.svg"
 
 import classNames from 'classnames';
 import { ProductSearch } from "../ProductSearch/ProductSearch"

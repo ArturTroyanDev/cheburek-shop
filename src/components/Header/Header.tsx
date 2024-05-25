@@ -1,7 +1,7 @@
 import Image from "next/image"
 import styles from './Header.module.scss'
-import arrowDown from "../../../../public/icons/arrowDown.svg"
-import logo from "../../../../public/icons/logo.svg"
+import arrowDown from "../../../public/icons/arrowDown.svg"
+import logo from "../../../public/icons/logo.svg"
 import { ShoppingCart } from "../ShoppingCart/ShoppingCart"
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu"
 

@@ -1,10 +1,10 @@
 import React from "react";
-import { Header } from "./components/Header/Header";
+import { Header } from "../components/Header/Header";
 import { TypeProvider } from '@/context/ContextValue';
-import { ProductCard } from "./components/ProductCard/ProductCard";
-import { CardList } from "./components/CardList/CardList";
-import { Sidebar } from "./components/Sidebar/Sidebar";
-import { productCardImages } from "./../app/components/assets/productCardData/productCardImageArray"
+import { ProductCard } from "../components/ProductCard/ProductCard";
+import { CardList } from "../components/CardList/CardList";
+import { Sidebar } from "../components/Sidebar/Sidebar";
+import { productCardImages } from "../components/assets/productCardData/productCardImageArray"
 
 console.log(productCardImages)
 

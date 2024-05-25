@@ -1,5 +1,5 @@
 import Image from "next/image"
-import loupeIcon from "../../../../public/foodIcons/loupe.svg"
+import loupeIcon from "../../../public/icons/loupe.svg"
 import styles from "./productSearch.module.scss"
 
 export function ProductSearch(params: any) {
