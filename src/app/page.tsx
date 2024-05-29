@@ -4,9 +4,9 @@ import { TypeProvider } from '@/context/ContextValue';
 import { ProductCard } from "../components/ProductCard/ProductCard";
 import { CardList } from "../components/CardList/CardList";
 import { Sidebar } from "../components/Sidebar/Sidebar";
-import { productCardImages } from "../components/assets/productCardData/productCardImageArray"
+import { productCardImages } from "../components/assets/productCardData/productCardDaraArray"
+import { ProductPopup } from "../components/ProductPopup/ProductPopup"
 
-console.log(productCardImages)
 
 export default function Home() {
 
@@ -20,7 +20,7 @@ export default function Home() {
         <div className="container">
           <CardList>
             {
-              productCardImages.map((obj, index) => <ProductCard key={index} image={obj.image} title={obj.title} price={obj.price} />)
+              productCardImages.map((obj) => <ProductCard key={obj.id} image={obj.image} title={obj.title} price={obj.price} />)
             }
           </CardList>
         </div>
@@ -28,3 +28,4 @@ export default function Home() {
     </TypeProvider>
   );
 }
+

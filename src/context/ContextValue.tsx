@@ -13,6 +13,9 @@ type Context = {
 
     sidebarFlag: boolean,
     setSidebarFlag: (flag: boolean) => void 
+
+    ProductPopUpFlag: boolean,
+    setProductPopUpFlag: (flag: boolean) => void 
 }
 
 const ContextState = {
@@ -20,7 +23,10 @@ const ContextState = {
     setProductCount: () => 0,
 
     sidebarFlag: false,
-    setSidebarFlag: () => false
+    setSidebarFlag: () => false,
+
+    ProductPopUpFlag: false,
+    setProductPopUpFlag: () => false
 }
 
 
@@ -30,9 +36,10 @@ export const TypeProvider = (props: containerProps) => {
 
     const [productCount, setProductCount] = React.useState<number>(0)
     const [sidebarFlag, setSidebarFlag] = React.useState<boolean>(false)
+    const [ProductPopUpFlag, setProductPopUpFlag] = React.useState<boolean>(false)
 
     return (
-        <ContextWrapper.Provider value={{productCount, setProductCount, sidebarFlag, setSidebarFlag}}>
+        <ContextWrapper.Provider value={{productCount, setProductCount, sidebarFlag, setSidebarFlag, ProductPopUpFlag, setProductPopUpFlag}}>
             {props.children}
         </ContextWrapper.Provider>
     );

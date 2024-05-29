@@ -1,29 +1,23 @@
 'use client'
 import React from 'react';
 import styles from './Button.module.scss'
-// import { ShoppingCart } from '../ShoppingCart/ShoppingCart';
 import { useContextValue } from '@/context/ContextValue';
 
+type Props = {
+    id: any,
+    className: any,
+    onClick: any,
+    children: string,
 
+}
 
-export function Button({
-    text = 'Додати в кошик', }: { text?: String; }) {
-
-    const { productCount, setProductCount } = useContextValue()
-
-    function addProductCount() {
-        setProductCount(productCount + 1)
-    }
-
-    // console.log("componentButton: " + value)
-
+export function Button({ id, className, onClick, children }: Props) {
     return (
-        // <div className={styles.buttonWrap}>
-            <button onClick={addProductCount} className={styles.button}>
-                {text}
-            </button>
-        // </div>
-
-    );
-} 
+        <button
+            className={styles.btnProductCard}
+            onClick={onClick}>
+            {children}
+        </button>
+    )
+}
 

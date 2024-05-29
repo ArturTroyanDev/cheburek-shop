@@ -48,5 +48,3 @@ Tasks
 11. Consider the idea of making the sidebar the full height of the screen, so that the header is underneath it
 12. make icons display in sidebar component
 13. Объект сразу с иконкой.... и текстом категории...
-14. Components лучше вынести в src
-

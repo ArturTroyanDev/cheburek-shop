@@ -1,0 +1,59 @@
+.popup {
+    position: fixed;
+    background: rgba(21, 20, 19, 0.5);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    animation: opacity 0.5s;
+
+    @keyframes opacity {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+
+    .popupInner {
+        position: relative;
+        padding: 15px 10px;
+        width: 100%;
+        height: 89%;
+        background: rgba(255, 255, 255, 0.9);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        font-size: 25px;
+        animation: height 0.5s;
+
+        @keyframes height {
+            0% {
+                transform: translateY(150%);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+    }
+
+
+
+
+
+}
+
+
+
+.popInner .closeBtn {
+    position: absolute;
+    top: 16;
+    right: 16;
+}

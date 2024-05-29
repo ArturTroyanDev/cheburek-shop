@@ -2,6 +2,7 @@
 import React from 'react'
 import styles from "./sidebar.module.scss"
 import Image from "next/image"
+// import cheburek from "../../../public/categoryIcons/cheburek.svg"
 
 import icon0 from "../../../public/categoryIcons/cheburek.svg"
 import icon1 from "../../../public/categoryIcons/doughnut.svg"
@@ -21,15 +22,12 @@ export function Sidebar() {
         [styles.active]: sidebarFlag
     });
 
-
-
-
     const [activeIndex, setActiveIndex] = React.useState(0);
     const categoriesNames = ['Чебуреки', 'Пончики', 'Картопля', 'Кава', 'Какао',]
     const categoriesIconsArr = [icon0, icon1, icon2, icon3, icon4] // temporary option
-    // сделать одним объектом например:
+
     // const Menus = [
-    //     { title: "Bus", icon: "/Icons.svg", width: 30, height: 30 },
+    //     { title: "Bus", icon: "../../../public/categoryIcons/cheburek.svg", width: 30, height: 30 },
     //     { title: "Route", icon: "/routeIcon.svg", width: 30, height: 30 },
     //     { title: "Schedule", icon: "/scheduleIcon.svg", width: 30, height: 30 },
     //     { title: "Booking", icon: "/bookingIcon.svg", width: 30, height: 30 },
@@ -42,8 +40,8 @@ export function Sidebar() {
     //     { title: "Manage User", icon: "/manageUserIcon.svg", width: 30, height: 30 },
     //     { title: "Help", icon: "/helpIcon.svg", width: 30, height: 30 },
     //     { title: "Logout", icon: "/logoutIcon.svg", width: 30, height: 30 },
-    
     //   ] 
+    //   console.log(Menus[0].icon)
 
 
 

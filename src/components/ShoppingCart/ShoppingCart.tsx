@@ -9,14 +9,18 @@ import { useContextValue } from "@/context/ContextValue";
 
 export function ShoppingCart() {
     const { productCount } = useContextValue()
+    const [open, setOpen] = React.useState(false);
+
 
     return (
-        <div className={styles.cartBlock}>
-            <Image className={styles.img} src={cart} alt="bin" />
-           
-            <span className={styles.counterWrapper}>
-                <p className={styles.counter}>{productCount}</p>
-            </span>
+        <div className={styles.cartWrapper}>
+            <div className={styles.cartBlock}>
+                <Image className={styles.img} src={cart} alt="bin" />
+                <span className={styles.counterWrapper}>
+                    <p className={styles.counter}>{productCount}</p>
+                </span>
+                
+            </div>
         </div>
     )
 }

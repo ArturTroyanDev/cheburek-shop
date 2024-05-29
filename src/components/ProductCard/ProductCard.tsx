@@ -1,8 +1,11 @@
 "use client"
+import React from 'react';
 import Image from 'next/image'
-// import {productCardImages} from "../assets/productCardData/productCardDataConstants"
 import styles from './ProductCard.module.scss'
 import { Button } from "../Button/Button";
+import { ProductPopup } from "../ProductPopup/ProductPopup"
+import { Console } from 'console';
+
 
 // console.log(productCardImages[0].image)
 
@@ -13,9 +16,11 @@ type Props = {
 
 }
 
-export function ProductCard({image, title, price}: Props) {
+export function ProductCard({ image, title, price }: Props) {
+    const [buttonPopup, setButtonPopup] = React.useState(false)
 
     return (
+
         <div className={styles.block}>
             <Image
                 className={styles.img}
@@ -29,13 +34,20 @@ export function ProductCard({image, title, price}: Props) {
             <div className={styles.content}>
                 <h4 className={styles.title}>{title}</h4>
                 <div className={styles.price}>{price + "₴"}</div>
-                <Button />
+                <Button children={'Додати в кошик'} onClick={() => setButtonPopup(true)}/>
+
+
+                <ProductPopup trigger={buttonPopup} setTrigger={setButtonPopup}>
+                    <h1>Nigga</h1>
+                    <div></div>
+                </ProductPopup>
+
+
+
             </div>
         </div>
 
 
     )
 }
-{/* <Image className={styles.img} src={cheburek2} alt="cheburek" />
-                <Image className={styles.img} src={cheburek3} alt="cheburek" />
-                <Image className={styles.img} src={cheburek4} alt="cheburek" /> */}
+// сделать попап меню при нажатии на кнопку
