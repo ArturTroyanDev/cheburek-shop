@@ -34,7 +34,7 @@ export function ProductCard({ image, title, price }: Props) {
             <div className={styles.content}>
                 <h4 className={styles.title}>{title}</h4>
                 <div className={styles.price}>{price + "₴"}</div>
-                <Button children={'Додати в кошик'} onClick={() => setButtonPopup(true)}/>
+                <Button text={'Додати в кошик'} onClick={() => setButtonPopup(true)}/>
 
 
                 <ProductPopup trigger={buttonPopup} setTrigger={setButtonPopup}>

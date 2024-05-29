@@ -7,17 +7,13 @@ type Props = {
     // id: any,
     // className: any,
     onClick: () => void,
-    children: string,
+    text: string,
 
 }
 
-export function Button({onClick, children }: Props) {
+export function Button({ onClick, text = "button" }: Props) {
     return (
-        <button
-            className={styles.btnProductCard}
-            onClick={onClick}>
-            {children}
-        </button>
+        <button className={styles.btnProductCard} onClick={onClick}>{text}</button>
     )
 }
 
