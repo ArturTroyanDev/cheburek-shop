@@ -1,59 +1,61 @@
 .popup {
     position: fixed;
-    background: rgba(21, 20, 19, 0.5);
-    left: 0;
+    background: rgba(21, 20, 19, 0.3);
+    // left: 0;
     bottom: 0;
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: end;
-    animation: opacity 0.5s;
+    align-items: flex-end;
 
-    @keyframes opacity {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 1;
-        }
-    }
-
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
 
     .popupInner {
         position: relative;
         padding: 15px 10px;
         width: 100%;
         height: 89%;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 0, 0, 0.5);
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
         font-size: 25px;
-        animation: height 0.5s;
+        transform: scale(0.5);
+        transition: 0.4s all;
 
-        @keyframes height {
-            0% {
-                transform: translateY(150%);
-            }
 
-            100% {
-                transform: translateY(0);
-            }
-        }
+        // animation: height 0.5s;
+
+        // @keyframes height {
+        //     0% {
+        //         transform: translateY(150%);
+        //     }
+
+        //     100% {
+        //         transform: translateY(0);
+        //     }
+        // }
 
     }
 
+    .popupInner.active {
+        transform: scale(1);
+    }
+}
 
-
-
+.popup.active {
+    opacity: 1;
+    pointer-events: all;
 
 }
 
+// @keyframes opacity {
+//     0% {
+//         opacity: 0;
+//     }
 
-
-.popInner .closeBtn {
-    position: absolute;
-    top: 16;
-    right: 16;
-}
+//     100% {
+//         opacity: 1;
+//     }
+// }   

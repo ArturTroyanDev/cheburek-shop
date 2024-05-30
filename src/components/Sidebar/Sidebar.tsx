@@ -18,7 +18,7 @@ import { useContextValue } from "@/context/ContextValue";
 export function Sidebar() {
     const { sidebarFlag } = useContextValue();
 
-    const sidebarClassName = classNames(styles.sidebar, {
+    const isSidebarActive = classNames(styles.sidebar, {
         [styles.active]: sidebarFlag
     });
 
@@ -50,11 +50,11 @@ export function Sidebar() {
     };
 
     let stylesItem = classNames(styles.item);
-    let stylesItemActive = classNames(styles.itemActive, styles.item);
+    let stylesItemActive = classNames(styles.item, styles.itemActive);
 
 
     return (
-        <div className={sidebarClassName}>
+        <div className={isSidebarActive}>
             <ProductSearch />
             <ul className={styles.categoriesContainer}>
                 {categoriesNames.map((value, index) => (
