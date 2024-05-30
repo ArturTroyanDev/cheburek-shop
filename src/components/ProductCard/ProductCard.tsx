@@ -4,7 +4,8 @@ import Image from 'next/image'
 import styles from './ProductCard.module.scss'
 import { Button } from "../Button/Button";
 import { ProductPopup } from "../ProductPopup/ProductPopup"
-import { Console } from 'console';
+
+import { productCardImages } from "../assets/productCardData/productCardDaraArray"
 
 
 // console.log(productCardImages[0].image)
@@ -26,7 +27,7 @@ export function ProductCard({ image, title, price }: Props) {
         <div className={styles.block}>
             <Image
                 className={styles.img}
-                blurDataURL='none'
+                // blurDataURL='none'
                 src={image}
                 alt="cheburek"
                 width={428}
@@ -36,11 +37,14 @@ export function ProductCard({ image, title, price }: Props) {
             <div className={styles.content}>
                 <h4 className={styles.title}>{title}</h4>
                 <div className={styles.price}>{price + "₴"}</div>
-                <Button text={'Додати в кошик'} onClick={() => setPopupActive(true)}/>
+                <Button text={'Додати в кошик'} onClick={() => setPopupActive(true)} />
 
 
-                <ProductPopup active={popupActive} setActive={setPopupActive}>
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quod aliquam quibusdam voluptatem laudantium asperiores quia corporis natus sed. Laboriosam non optio corporis ducimus commodi debitis similique quas possimus qui."
+                <ProductPopup active={popupActive} setActive={setPopupActive} >
+                    <div>
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quod aliquam quibusdam voluptatem laudantium asperiores quia corporis natus sed. Laboriosam non optio corporis ducimus commodi debitis similique quas possimus qui."
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quod aliquam quibusdam voluptatem laudantium asperiores quia corporis natus sed. Laboriosam non optio corporis ducimus commodi debitis similique quas possimus qui."
+                    </div>
                 </ProductPopup>
 
 

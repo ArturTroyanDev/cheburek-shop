@@ -1,7 +1,7 @@
 .popup {
     position: fixed;
-    background: rgba(21, 20, 19, 0.3);
-    // left: 0;
+    background: rgba(21, 20, 19, 0.5);
+    left: 0;
     bottom: 0;
     width: 100%;
     height: 100vh;
@@ -12,7 +12,7 @@
     pointer-events: none;
     transition: 0.5s;
 
-    .popupInner {
+    .content {
         position: relative;
         padding: 15px 10px;
         width: 100%;
@@ -39,7 +39,7 @@
 
     }
 
-    .popupInner.active {
+    .content.active {
         transform: scale(1);
     }
 }
