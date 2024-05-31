@@ -40,12 +40,7 @@ export function ProductCard({ image, title, price }: Props) {
                 <Button text={'Додати в кошик'} onClick={() => setPopupActive(true)} />
 
 
-                <ProductPopup active={popupActive} setActive={setPopupActive} image={image} title={title} price={price}>
-                    <div>
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quod aliquam quibusdam voluptatem laudantium asperiores quia corporis natus sed. Laboriosam non optio corporis ducimus commodi debitis similique quas possimus qui."
-                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quod aliquam quibusdam voluptatem laudantium asperiores quia corporis natus sed. Laboriosam non optio corporis ducimus commodi debitis similique quas possimus qui."
-                    </div>
-                </ProductPopup>
+                <ProductPopup active={popupActive} setActive={setPopupActive} image={image} title={title} price={price}/>
 
 
 
