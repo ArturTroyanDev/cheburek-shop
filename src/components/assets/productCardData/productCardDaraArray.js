@@ -1,13 +1,13 @@
-import image1 from "../../../../public/foodPhotos/cheburek1_428x380px.jpg"
-import image2 from "../../../../public/foodPhotos/cheburek2_428x380px.jpg"
-import image3 from "../../../../public/foodPhotos/cheburek3_428x380px.jpg"
-import image4 from "../../../../public/foodPhotos/cheburek4_428x380px.jpg"
+import image1 from "../../../../public/foodPhotos/for_320px_screens/cheburek1_300x240px.jpg"
+import image2 from "../../../../public/foodPhotos/for_320px_screens/cheburek2_300x240px.jpg"
+import image3 from "../../../../public/foodPhotos/for_320px_screens/cheburek3_300x240px.jpg"
+import image4 from "../../../../public/foodPhotos/for_320px_screens/cheburek4_300x240px.jpg"
 
-import image01 from "../../../../public/foodPhotos/ponchyk1_428x380.jpg"
-import image02 from "../../../../public/foodPhotos/ponchyk2_428x380.jpg"
-import image03 from "../../../../public/foodPhotos/ponchyk3_428x380.jpg"
-import image04 from "../../../../public/foodPhotos/ponchyk4_428x380.jpg"
-import image05 from "../../../../public/foodPhotos/ponchyk5_428x380.jpg"
+import image01 from "../../../../public/foodPhotos/for_320px_screens/ponchyk1_300x240px.jpg"
+import image02 from "../../../../public/foodPhotos/for_320px_screens/ponchyk2_300x240px.jpg"
+import image03 from "../../../../public/foodPhotos/for_320px_screens/ponchyk3_300x240px.jpg"
+import image04 from "../../../../public/foodPhotos/for_320px_screens/ponchyk4_300x240px.jpg"
+import image05 from "../../../../public/foodPhotos/for_320px_screens/ponchyk5_300x240px.jpg"
 
 export let productCardImages = [
   {
