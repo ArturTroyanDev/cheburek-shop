@@ -18,8 +18,6 @@ export function Button({ onClick, text = "+", style}: Props) {
         [style]: style
     });
 
-    console.log(style)
-
     return (
         <button className={isStylesSet} onClick={onClick}>{text}</button>
     )

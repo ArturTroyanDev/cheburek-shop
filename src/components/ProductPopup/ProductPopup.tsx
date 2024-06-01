@@ -34,8 +34,9 @@ export function ProductPopup({ active, setActive, image, title, price, children 
                         src={image}
                         alt="cheburek"
                         width={300}
-                        height={240}
-                        placeholder="blur"
+                        height={260}
+                        // fill
+
                     />
                     <div className={styles.info}>
                         <h4 className={styles.title}>
