@@ -15,6 +15,11 @@ import { ProductSearch } from "../ProductSearch/ProductSearch"
 import { useContextValue } from "@/context/ContextValue";
 
 
+
+
+
+
+
 export function Sidebar() {
     const { sidebarFlag } = useContextValue();
 

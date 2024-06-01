@@ -2,6 +2,8 @@
 import React from 'react';
 import styles from './Button.module.scss'
 import { useContextValue } from '@/context/ContextValue';
+import classNames from 'classnames';
+
 
 type Props = {
     // id: any,
@@ -12,8 +14,14 @@ type Props = {
 }
 
 export function Button({ onClick, text = "+", style}: Props) {
+    const isStylesSet = classNames(styles.button, {
+        [style]: style
+    });
+
+    console.log(style)
+
     return (
-        <button className={styles.btnProductCard} onClick={onClick}>{text}</button>
+        <button className={isStylesSet} onClick={onClick}>{text}</button>
     )
 }
 

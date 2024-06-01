@@ -41,14 +41,12 @@ export function ProductPopup({ active, setActive, image, title, price, children 
                         <h4 className={styles.title}>
                             {title}
                         </h4>
-                        <div className={styles.priceWrapper}>
-                            <div className={styles.price}>
-                                {price + "₴"}
-                            </div>
+                        <div className={styles.price}>
+                            {price + "₴"}
                         </div>
                     </div>
                 </div>
-                <Button text={"Додати: " + price + "₴"} />
+                <Button text={"Додати: " + price + "₴"} style={styles.button} />
             </div>
         </div>
     )
