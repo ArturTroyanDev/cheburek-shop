@@ -24,8 +24,13 @@ export function ProductPopup({ active, setActive, image, title, price, children 
         [styles.active]: active
     });
 
+    const isBlurActive = classNames(styles.blur, {
+        [styles.active]: active
+    });
+
     return (
         <div className={isPopupActive} onClick={() => setActive(false)}>
+            <div className={isBlurActive}></div>
             <div className={isContentActive} onClick={e => e.stopPropagation()}> {/* preventing any parent event handlers from being executed */}
                 <div className={styles.swipeBar}></div>
                 <div className={styles.layout}>
@@ -35,8 +40,6 @@ export function ProductPopup({ active, setActive, image, title, price, children 
                         alt="cheburek"
                         width={300}
                         height={260}
-                        // fill
-
                     />
                     <div className={styles.info}>
                         <h4 className={styles.title}>
