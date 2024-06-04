@@ -13,7 +13,7 @@ type Props = {
     style?: any,
 }
 
-export function Button({ onClick, text = "+", style}: Props) {
+export function Button({ onClick, text = "+", style }: Props) {
     const isStylesSet = classNames(styles.button, {
         [style]: style
     });

@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import classNames from 'classnames';
 import { Button } from "../Button/Button";
-
+import { useContextValue } from "@/context/ContextValue";
 
 type Props = {
     active: boolean,
@@ -16,6 +16,13 @@ type Props = {
 
 export function ProductPopup({ active, setActive, image, title, price, children }: Props) {
 
+    const { productCount, setProductCount } = useContextValue();
+
+    const click = () => {
+        setProductCount(productCount + 1)
+        setActive(false)
+    }
+
     const isPopupActive = classNames(styles.popup, {
         [styles.active]: active
     });
@@ -27,6 +34,8 @@ export function ProductPopup({ active, setActive, image, title, price, children 
     const isBlurActive = classNames(styles.blur, {
         [styles.active]: active
     });
+
+    console.log(productCount)
 
     return (
         <div className={isPopupActive} onClick={() => setActive(false)}>
@@ -50,7 +59,7 @@ export function ProductPopup({ active, setActive, image, title, price, children 
                         </div>
                     </div>
                 </div>
-                <Button text={"Додати: " + price + "₴"} style={styles.button} />
+                <Button text={"Додати: " + price + "₴"} style={styles.button} onClick={click} />
             </div>
         </div>
     )
