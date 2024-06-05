@@ -9,17 +9,17 @@ type Props = {
     // id: any,
     // className: any,
     onClick?: () => void,
-    text?: string,
+    children?: React.ReactNode
     style?: any,
 }
 
-export function Button({ onClick, text = "+", style }: Props) {
+export function Button({ onClick, children, style }: Props) {
     const isStylesSet = classNames(styles.button, {
         [style]: style
     });
 
     return (
-        <button className={isStylesSet} onClick={onClick}>{text}</button>
+        <button className={isStylesSet} onClick={onClick}>{children}</button>
     )
 }
 

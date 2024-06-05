@@ -59,7 +59,7 @@ export function ProductPopup({ active, setActive, image, title, price, children 
                         </div>
                     </div>
                 </div>
-                <Button text={"Додати: " + price + "₴"} style={styles.button} onClick={click} />
+                <Button children={"Додати: " + price + "₴"} style={styles.button} onClick={click} />
             </div>
         </div>
     )
