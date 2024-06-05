@@ -1,4 +1,4 @@
-import image1 from "../../../../public/foodPhotos/for_320px_screens/cheburek1_300x240px.jpg"
+import image1 from "../../../../public/foodPhotos/for_320px_screens/cheburek1_300x328px.jpg"
 import image2 from "../../../../public/foodPhotos/for_320px_screens/cheburek2_300x240px.jpg"
 import image3 from "../../../../public/foodPhotos/for_320px_screens/cheburek3_300x240px.jpg"
 import image4 from "../../../../public/foodPhotos/for_320px_screens/cheburek4_300x240px.jpg"

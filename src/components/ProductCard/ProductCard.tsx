@@ -19,8 +19,8 @@ type Props = {
 
 export function ProductCard({ image, title, price }: Props) {
     const [popupActive, setPopupActive] = React.useState(false)
+    const [isButtonActive, setButtonActive] = React.useState(false)
 
-    // console.log(popupActive)
 
     return (
 
@@ -37,10 +37,10 @@ export function ProductCard({ image, title, price }: Props) {
             <div className={styles.content}>
                 <h4 className={styles.title}>{title}</h4>
                 <div className={styles.price}>{price + "₴"}</div>
+                
                 <Button text={'Додати в кошик'} onClick={() => setPopupActive(true)} />
 
-
-                <ProductPopup active={popupActive} setActive={setPopupActive} image={image} title={title} price={price}/>
+                <ProductPopup active={popupActive} setActive={setPopupActive} image={image} title={title} price={price} />
 
 
 
