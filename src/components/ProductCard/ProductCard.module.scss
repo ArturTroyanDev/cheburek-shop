@@ -19,10 +19,11 @@
         cursor: pointer;
     }
 
-    // .imgPlus,
-    // .imgMinus {
-    //     align-self: center;
-    // }
+    .imgPlus,
+    .imgMinus {
+        width: auto;
+        height: auto;
+    }
 }
 
 
