@@ -1,4 +1,3 @@
-import { Children } from 'react';
 import styles from './CardList.module.scss'
 
 type containerProps = {
@@ -7,11 +6,9 @@ type containerProps = {
 
 export function CardList(props: containerProps) {
     return (
-        <>
-            <div className={styles.list}>
-                {props.children}
-            </div>
-        </>
+        <div className={styles.list}>
+            {props.children}
+        </div>
     )
 
 }

@@ -4,6 +4,7 @@ import Image from "next/image";
 import classNames from 'classnames';
 import { Button } from "../Button/Button";
 import { useContextValue } from "@/context/ContextValue";
+import { FoodSupplements } from "../FoodSupplements/FoodSupplements";
 
 type Props = {
     active: boolean,
@@ -35,7 +36,7 @@ export function ProductPopup({ active, setActive, image, title, price, children 
         [styles.active]: active
     });
 
-    console.log(productCount)
+    // console.log(productCount)
 
     return (
         <div className={isPopupActive} onClick={() => setActive(false)}>
@@ -48,7 +49,7 @@ export function ProductPopup({ active, setActive, image, title, price, children 
                         src={image}
                         alt="cheburek"
                         width={300}
-                        height={260}
+                        height={328}
                     />
                     <div className={styles.info}>
                         <h4 className={styles.title}>
@@ -59,6 +60,9 @@ export function ProductPopup({ active, setActive, image, title, price, children 
                         </div>
                     </div>
                 </div>
+
+                <FoodSupplements name={"Помідор"} price={10} />
+
                 <Button style={styles.button} onClick={click}>{"Додати: " + price + "₴"}</Button>
             </div>
         </div>

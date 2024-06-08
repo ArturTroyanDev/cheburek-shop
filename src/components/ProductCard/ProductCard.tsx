@@ -29,12 +29,6 @@ export function ProductCard({ image, title, price }: Props) {
         if (productCount < 1) {
             return <Button onClick={() => setPopupActive(true)}>{'Додати в кошик'}</Button>
 
-            // ./src/components/ProductCard/ProductCard.tsx
-            // 30:28  Error: Do not pass children as props. Instead, nest children between the opening and closing tags.  react/no-children-prop
-
-            // ./src/components/ProductPopup/ProductPopup.tsx
-            // 62:25  Error: Do not pass children as props. Instead, nest children between the opening and closing tags.  react/no-children-prop
-
         }
 
         return (
@@ -44,16 +38,7 @@ export function ProductCard({ image, title, price }: Props) {
                         className={styles.imgMinus}
                         src={minus}
                         alt="-"
-                        // width={10}
-                        // height={1}
-                        
                     />
-                    {/* <link
-                        rel="icon"
-                        href="../../../public/icons/minus.svg"
-                        type="image/<generated>"
-                        sizes="<generated>"
-                    /> */}
                 </Button>
                 {"У кошику: " + productCount}
                 <Button style={styles.btnPlus} onClick={() => setPopupActive(true)}>
@@ -61,8 +46,6 @@ export function ProductCard({ image, title, price }: Props) {
                         className={styles.imgPlus}
                         src={plus}
                         alt="+"
-                        // width={10}
-                        // height={10}
                     />
                 </Button>
 
@@ -87,11 +70,10 @@ export function ProductCard({ image, title, price }: Props) {
                 <h4 className={styles.title}>{title}</h4>
                 <div className={styles.price}>{price + "₴"}</div>
 
-                {/* <Button text={'Додати в кошик'} onClick={() => setPopupActive(true)} /> */}
                 {buttonState()}
 
                 <ProductPopup active={popupActive} setActive={setPopupActive} image={image} title={title} price={price} />
-
+                
 
 
             </div>
