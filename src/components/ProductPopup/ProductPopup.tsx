@@ -36,7 +36,32 @@ export function ProductPopup({ active, setActive, image, title, price, children 
         [styles.active]: active
     });
 
-    // console.log(productCount)
+    const supplements = [
+        {
+            "id": 0,
+            "title": "Огірок",
+            "price": 5,
+            "category": 1,
+        },
+        {
+            "id": 1,
+            "title": "Помідор",
+            "price": 10,
+            "category": 1,
+        },
+        {
+            "id": 2,
+            "title": "Творожок",
+            "price": 20,
+            "category": 2,
+        },
+        {
+            "id": 3,
+            "title": "Копчена Залупка",
+            "price": 75,
+            "category": 2,
+        }
+    ]
 
     return (
         <div className={isPopupActive} onClick={() => setActive(false)}>
@@ -51,6 +76,7 @@ export function ProductPopup({ active, setActive, image, title, price, children 
                         width={300}
                         height={328}
                     />
+
                     <div className={styles.info}>
                         <h4 className={styles.title}>
                             {title}
@@ -59,9 +85,19 @@ export function ProductPopup({ active, setActive, image, title, price, children 
                             {price + "₴"}
                         </div>
                     </div>
+
+                    <div className={styles.supplements}>
+                        <h4 className={styles.title}>Додатково</h4>
+                        <div className={styles.supplementsContainer}>
+                            {
+                                supplements.map((obj) => <FoodSupplements key={obj.id} name={obj.title} price={obj.price} />)
+                            }
+                        </div>
+
+                    </div>
                 </div>
 
-                <FoodSupplements name={"Помідор"} price={10} />
+
 
                 <Button style={styles.button} onClick={click}>{"Додати: " + price + "₴"}</Button>
             </div>

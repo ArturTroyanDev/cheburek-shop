@@ -84,12 +84,7 @@
                 row-gap: 20px;
                 width: 100%;
 
-                .title,
-                .price {
-                    width: max-content;
-                    font-weight: 600;
-                    font-size: 20px;
-                }
+
 
 
                 .price {
@@ -100,9 +95,26 @@
                     color: rgba(255, 255, 255, 1);
                 }
             }
+
+            .supplements {
+                .title {
+                    padding: 0px 0px 12px 0px;
+                }
+
+                .supplementsContainer {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 8px;
+                }
+            }
         }
 
     }
+
+    // :3002/favicon.ico:1 
+        
+        
+    //    Failed to load resource: the server responded with a status of 404 (Not Found)
 
     .blur.active {
         background: rgba(21, 20, 19, 0.5);
@@ -116,7 +128,14 @@
 
     }
 
-    .button {}
+    // .button {}
+}
+
+.title,
+.price {
+    width: max-content;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .popup.active {
