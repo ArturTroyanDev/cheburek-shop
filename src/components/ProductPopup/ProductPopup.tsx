@@ -3,14 +3,15 @@ import React from "react";
 import Image from "next/image";
 import classNames from 'classnames';
 import { Button } from "../Button/Button";
-import { useContextValue } from "@/context/ContextValue";
+import { useContextValue } from "../../context/ContextValue";
 import { FoodSupplements } from "../FoodSupplements/FoodSupplements";
+
 
 type Props = {
     active: boolean,
     setActive: any,
     children?: React.ReactNode,
-    image: any,
+    image: string,
     title: string,
     price: number
 }
@@ -35,6 +36,8 @@ export function ProductPopup({ active, setActive, image, title, price, children 
     const isBlurActive = classNames(styles.blur, {
         [styles.active]: active
     });
+
+
 
     const supplements = [
         {
@@ -75,6 +78,8 @@ export function ProductPopup({ active, setActive, image, title, price, children 
                         alt="cheburek"
                         width={300}
                         height={328}
+                        priority={true}
+
                     />
 
                     <div className={styles.info}>

@@ -12,7 +12,7 @@ import icon4 from "../../../public/categoryIcons/cocoa.svg"
 
 import classNames from 'classnames';
 import { ProductSearch } from "../ProductSearch/ProductSearch"
-import { useContextValue } from "@/context/ContextValue";
+import { useContextValue } from "../../context/ContextValue";
 
 
 
@@ -77,23 +77,3 @@ export function Sidebar() {
     )
 
 }
-// <li className={styles.item}>
-//     <Image src={cheburek} alt="cheburek" />
-//     <span className={styles.title}>Чебуреки</span>
-// </li>
-// <li className={styles.item}>
-//     <Image src={cheburek} alt="cheburek" />
-//     <span className={styles.title}>Чебуреки</span>
-// </li>
-// <li className={styles.item}>
-//     <Image src={cheburek} alt="cheburek" />
-//     <span className={styles.title}>Чебуреки</span>
-// </li>
-// <li className={styles.item}>
-//     <Image src={cheburek} alt="cheburek" />
-//     <span className={styles.title}>Чебуреки</span>
-// </li>
-// <li className={styles.item}>
-//     <Image src={cheburek} alt="cheburek" />
-//     <span className={styles.title}>Чебуреки</span>
-// </li>

@@ -4,33 +4,30 @@ import Image from 'next/image'
 import styles from './ProductCard.module.scss'
 import { Button } from "../Button/Button";
 import { ProductPopup } from "../ProductPopup/ProductPopup"
-import { productCardImages } from "../assets/productCardData/productCardDaraArray"
-import { useContextValue } from "@/context/ContextValue";
+import { useContextValue } from "../../context/ContextValue";
 import plus from "../../../public/icons/plus.svg"
 import minus from "../../../public/icons/minus.svg"
-// console.log(productCardImages[0].image)
+import { DynamicPlaceholderBlur } from '../DynamicPlaceholderBlur/DynamicPlaceholderBlur';
 
 type Props = {
-    image: any,
+    image: string,
     title: string,
     price: number,
 
+    alt?: string,
+    width?: number,
+    height?: number,
+    child?: React.ReactNode;
 }
 
-export function ProductCard({ image, title, price }: Props) {
+export function ProductCard({ image, title, price, alt, width, height, child }: Props) {
     const [popupActive, setPopupActive] = React.useState(false)
-    const [isButtonActive, setButtonActive] = React.useState(false)
-
     const { productCount, setProductCount } = useContextValue();
-
-    // console.log("hui")
 
     const buttonState = () => {
         if (productCount < 1) {
             return <Button onClick={() => setPopupActive(true)}>{'Додати в кошик'}</Button>
-
         }
-
         return (
             <div className={styles.doubleButton}>
                 <Button style={styles.btnMinus} onClick={() => setProductCount(productCount - 1)}>
@@ -48,38 +45,22 @@ export function ProductCard({ image, title, price }: Props) {
                         alt="+"
                     />
                 </Button>
-
             </div >
         )
-
     }
 
     return (
-
         <div className={styles.block}>
-            <Image
-                className={styles.image}
-                // blurDataURL='none'
-                src={image}
-                alt="cheburek"
-                width={300}
-                height={240}
-                placeholder="blur"
-            />
+
+            {/* <DynamicPlaceholderBlur src={image} alt={alt} width={width} height={height} /> */}
+            {child}
+            
             <div className={styles.content}>
                 <h4 className={styles.title}>{title}</h4>
                 <div className={styles.price}>{price + "₴"}</div>
-
                 {buttonState()}
-
                 <ProductPopup active={popupActive} setActive={setPopupActive} image={image} title={title} price={price} />
-                
-
-
             </div>
         </div>
-
-
     )
 }
-// сделать попап меню при нажатии на кнопку

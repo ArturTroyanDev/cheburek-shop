@@ -1,9 +1,23 @@
+// .list {
+//     margin-left: auto;
+//     margin-right: auto;
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     align-items: center;
+//     max-width: 876px;
+// }
 .list {
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
     max-width: 876px;
+}
+
+@media (min-width: 560px) {
+    .list {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

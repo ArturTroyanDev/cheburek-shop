@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import styles from './Button.module.scss'
-import { useContextValue } from '@/context/ContextValue';
+import { useContextValue } from '../../context/ContextValue';
 import classNames from 'classnames';
 
 

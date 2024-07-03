@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './burgerMenu.module.scss'
 import classNames from 'classnames';
 
-import { useContextValue } from "@/context/ContextValue";
+import { useContextValue } from "../../context/ContextValue";
 // sidebarActive
 
 export function BurgerMenu() {

@@ -4,6 +4,7 @@ import arrowDown from "../../../public/icons/arrowDown.svg"
 import logo from "../../../public/icons/logo.svg"
 import { ShoppingCart } from "../ShoppingCart/ShoppingCart"
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu"
+import Link from 'next/link'
 
 export function Header() {
     return (
@@ -11,11 +12,11 @@ export function Header() {
             <div className="container header__container">
                 <header className={styles.header}>
 
-                    <BurgerMenu/>
+                    <BurgerMenu />
 
-                    <span className={styles.logoWrapper}>
-                        <Image src={logo} alt="" />
-                    </span>
+                    <Link href="/" className={styles.logoWrapper}>
+                        <Image src={logo} alt="" priority />
+                    </Link>
 
                     <ShoppingCart />
 
