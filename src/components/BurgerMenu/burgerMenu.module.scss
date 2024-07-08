@@ -39,3 +39,11 @@
 .active .stick:nth-child(3) {
     transform: translateX(0) rotate(-45deg);
 }
+
+
+
+@media (min-width: 1215px) {
+    .burger {
+        display: none;
+    }
+}

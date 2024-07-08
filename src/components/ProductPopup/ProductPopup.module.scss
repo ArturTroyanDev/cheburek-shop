@@ -7,7 +7,7 @@
 }
 
 .popup {
-    
+
     display: flex;
     flex-direction: column-reverse;
 
@@ -21,7 +21,7 @@
     align-items: flex-end;
     // backdrop-filter: blur(1px);
     // filter: blur(5px);
-    z-index: 2;
+    z-index: 31;
 
     pointer-events: none;
 
@@ -30,7 +30,9 @@
     .content {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        // overflow: auto;
+        // align-items: center;
+        // justify-content: space-between;
         position: relative;
         padding: 0px 10px 10px 10px;
         width: 100%;
@@ -43,13 +45,16 @@
 
 
         .swipeBar {
-            position: relative;
+            // position: absolute;
+            // display: table-cell;
             display: flex;
+            // display: table;
             justify-content: center;
             align-items: center;
             border-radius: 25px 25px 0 0;
             width: 100%;
             padding: 7px 0px 10px 0px;
+            // height: 17px;
         }
 
         .swipeBar::before {
@@ -62,12 +67,15 @@
 
         .layout {
             display: flex;
+            // flex-grow: 1;
             flex-direction: column;
             // align-items: center;
             // position: relative;
             width: 100%;
             row-gap: 20px;
             height: 100%;
+            // flex: 1;
+            
 
 
             .image {
@@ -108,13 +116,29 @@
                     row-gap: 8px;
                 }
             }
+
+
         }
+
+        .button {
+            bottom: 0;
+            margin-top: auto;
+        }
+
+        // .layout.button {
+        //     align-items: center;
+        // }
+
 
     }
 
+    .button {
+        position: relative;
+    }
+
     // :3002/favicon.ico:1 
-        
-        
+
+
     //    Failed to load resource: the server responded with a status of 404 (Not Found)
 
     .blur.active {
@@ -153,3 +177,12 @@
 //         opacity: 1;
 //     }
 // }   
+
+
+@media (min-width: 800px) {
+    // .layout {
+    //     display: flex;
+    //     flex-direction: wrap;
+    // }
+
+}

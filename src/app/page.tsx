@@ -11,6 +11,10 @@ import { useContextValue } from "../context/ContextValue";
 import { DynamicPlaceholderBlur } from "@/components/DynamicPlaceholderBlur/DynamicPlaceholderBlur";
 import { Sidebar } from "@/components/Sidebar/Sidebar";
 
+
+// var screenWidth = window.innerWidth;
+// console.log("******************************result: " + screenWidth)
+
 // import Sceleton from "./loading";
 // import Sceleton from "./loading";
 
@@ -21,7 +25,7 @@ import { Sidebar } from "@/components/Sidebar/Sidebar";
 // }
 
 // 1. finish the layout and disable the navbar`s showing logic if computers screen 
-// 3. disable vertical scroll
+// 3. disable vertical scroll if the popup is opened
 
 
 export default async function Home() {
@@ -32,7 +36,6 @@ export default async function Home() {
   return (
     <div className="wrapper">
       <Sidebar />
-
       <CardList>
         {
           data.map((obj: any) => <ProductCard key={obj.id} child={<DynamicPlaceholderBlur src={"http://localhost:1337" + obj.attributes.image.data[0].attributes.url} width={300} height={240} styles={styles.image} alt={obj.attributes.title} />} image={"http://localhost:1337" + obj.attributes.image.data[0].attributes.url} title={obj.attributes.title} price={obj.attributes.price} />)

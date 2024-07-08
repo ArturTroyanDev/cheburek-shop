@@ -23,10 +23,18 @@ type Props = {
 export function ProductCard({ image, title, price, alt, width, height, child }: Props) {
     const [popupActive, setPopupActive] = React.useState(false)
     const { productCount, setProductCount } = useContextValue();
+    const { sidebarFlag, setSidebarFlag } = useContextValue();
+
+
 
     const buttonState = () => {
-        if (productCount < 1) {
-            return <Button onClick={() => setPopupActive(true)}>{'Додати в кошик'}</Button>
+        if (productCount === 0) {
+            return <Button onClick={() => {
+                setPopupActive(true)
+                setSidebarFlag(false)
+            }
+
+            }>{'Додати в кошик'}</Button>
         }
         return (
             <div className={styles.doubleButton}>
@@ -38,7 +46,11 @@ export function ProductCard({ image, title, price, alt, width, height, child }: 
                     />
                 </Button>
                 {"У кошику: " + productCount}
-                <Button style={styles.btnPlus} onClick={() => setPopupActive(true)}>
+                <Button style={styles.btnPlus} onClick={() => {
+                    setPopupActive(true)
+                    setSidebarFlag(false)
+                }
+                }>
                     <Image
                         className={styles.imgPlus}
                         src={plus}
@@ -49,12 +61,16 @@ export function ProductCard({ image, title, price, alt, width, height, child }: 
         )
     }
 
+    // if popup active set sidebar false
+
+
+
     return (
         <div className={styles.block}>
 
             {/* <DynamicPlaceholderBlur src={image} alt={alt} width={width} height={height} /> */}
             {child}
-            
+
             <div className={styles.content}>
                 <h4 className={styles.title}>{title}</h4>
                 <div className={styles.price}>{price + "₴"}</div>
