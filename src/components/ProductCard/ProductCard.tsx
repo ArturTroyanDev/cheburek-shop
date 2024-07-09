@@ -25,7 +25,7 @@ export function ProductCard({ image, title, price, alt, width, height, child }: 
     const { productCount, setProductCount } = useContextValue();
     const { sidebarFlag, setSidebarFlag } = useContextValue();
 
-
+    
 
     const buttonState = () => {
         if (productCount === 0) {
@@ -62,9 +62,14 @@ export function ProductCard({ image, title, price, alt, width, height, child }: 
     }
 
     // if popup active set sidebar false
+    // const overflow =  document.body.style.overflow;
+    // make if the sidebar is active, when u click on outside the sidebar, it hide
 
 
+    popupActive ? document.body.style.overflow = 'hidden' :  document.body.style.overflow = 'unset' // here is bag. When I click on the sidebar and then open a popup, scroll continues work  
 
+
+    console.log("popup: " + popupActive)
     return (
         <div className={styles.block}>
 
