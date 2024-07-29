@@ -1,5 +1,5 @@
 "use client"
-import { ProductDataClient } from "../utils/dataReceiver/ProductDataClient";
+import { ProductDataClient } from "./../utils/dataReceiver/ProductDataClient";
 import { ProductCard } from "./ProductCard";
 
 
