@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
-import withPlaiceholder from '@plaiceholder/next';
+// import withPlaiceholder from '@plaiceholder/next';
 
 const nextConfig = {
-  // output: "export",
+  output: "export",
   reactStrictMode: true,
   images: {
     domains: ['localhost'], // <== Domain name
@@ -13,4 +13,5 @@ const nextConfig = {
 import path from 'path';
 
 
-export default withPlaiceholder(nextConfig);
+export default (nextConfig);
+// withPlaiceholder
