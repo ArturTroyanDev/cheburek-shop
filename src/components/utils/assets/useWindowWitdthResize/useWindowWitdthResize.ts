@@ -27,7 +27,7 @@ export const useWindowWitdthResize = (): number => {
     
 }
 
-export const isWindowBigger = (width: number): boolean => {
+export const useIsWindowBigger = (width: number): boolean => {
     let windowWidth = useWindowWitdthResize();
 
     if (windowWidth >= width) {

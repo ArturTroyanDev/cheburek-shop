@@ -3,7 +3,7 @@ import React from 'react'
 import styles from "./sidebar.module.scss"
 import Image from "next/image"
 import classNames from 'classnames';
-import { isWindowBigger } from "../utils/assets/useWindowWitdthResize/useWindowWitdthResize"
+import { useIsWindowBigger } from "../utils/assets/useWindowWitdthResize/useWindowWitdthResize"
 import { Categories } from '../Categories/Categories';
 
 import { useSelector, useDispatch } from 'react-redux'
@@ -40,7 +40,7 @@ export function Sidebar(dataReceiver: any) {
         sidebarFlag ? window.document.body.style.overflow = 'hidden' : window.document.body.style.overflow = 'unset';
     }, [sidebarFlag]);
 
-    isWindowBigger(1215) ? onChangeSidebarFlag(false) : null
+    useIsWindowBigger(1215) ? onChangeSidebarFlag(false) : null
 
     const isSidebarWrapperActive = classNames(styles.wrapper, {
         [styles.active]: sidebarFlag
