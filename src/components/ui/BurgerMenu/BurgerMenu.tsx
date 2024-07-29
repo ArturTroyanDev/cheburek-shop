@@ -3,8 +3,8 @@ import React from 'react'
 import styles from './burgerMenu.module.scss'
 import classNames from 'classnames';
 import { useSelector, useDispatch } from 'react-redux'
-import type { RootState } from '../utils/redux/store'
-import { setSidebarFlag } from '../utils/redux/slices/flagSlice'
+import type { RootState } from '../../utils/redux/store'
+import { setSidebarFlag } from '../../utils/redux/slices/flagSlice'
 
 type Props = {
     style?: any,

@@ -1,16 +1,17 @@
 /** @type {import('next').NextConfig} */
 import withPlaiceholder from '@plaiceholder/next';
+import path from 'path';
 
 const nextConfig = {
   // output: "export",
   reactStrictMode: true,
   images: {
-    domains: ['localhost'], // <== Domain name
+    domains: ['localhost'], // Domain name
+    unoptimized: true
   }
 
 };
 
-import path from 'path';
 
 
 export default withPlaiceholder(nextConfig);

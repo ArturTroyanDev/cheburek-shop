@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image'
 import styles from './ProductCard.module.scss'
-import { Button } from "../Button/Button";
+import { Button } from "../ui/Button/Button";
 import { ProductPopup } from "../ProductPopup/ProductPopup"
 import { useContextValue } from "../../context/ContextValue";
 import plus from "../../../public/icons/plus.svg"
