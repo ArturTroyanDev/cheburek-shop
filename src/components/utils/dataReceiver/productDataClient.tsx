@@ -40,7 +40,7 @@ interface ExtractedData {
     imageUrl: string,
 }
 
-export const productDataClient = () => {
+export const ProductDataClient = () => {
     const [items, setItems] = React.useState<ExtractedData[]>([]);
     const categoryId = useSelector((state: RootState) => state.filter.categoryId)
 

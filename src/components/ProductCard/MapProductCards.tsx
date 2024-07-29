@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect } from "react"
-import { productDataClient } from "../utils/dataReceiver/ProductDataClient";
+import { ProductDataClient } from "../utils/dataReceiver/ProductDataClient";
 import { ProductCard } from "./ProductCard";
 
 
@@ -25,7 +25,7 @@ type Props = {
 }
 
 export function MapProductCards() {
-    const data = productDataClient();
+    const data = ProductDataClient();
 
 
 
