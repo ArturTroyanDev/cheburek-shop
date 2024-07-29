@@ -4,7 +4,6 @@ import React from "react";
 import Image from "next/image";
 import classNames from 'classnames';
 import { Button } from "../ui/Button/Button";
-import { useContextValue } from "../../context/ContextValue";
 import { FoodSupplements } from "../FoodSupplements/FoodSupplements";
 
 import { useSelector, useDispatch } from 'react-redux';
