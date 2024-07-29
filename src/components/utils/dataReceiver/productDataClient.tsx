@@ -48,7 +48,7 @@ export const ProductDataClient = () => {
     React.useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://localhost:1337/api/chebureks?populate=*&pagination[page]=${3}&pagination[pageSize]=${1}&filters[category]=${categoryId}`);
+                const response = await fetch(`http://localhost:1337/api/chebureks?populate=*&pagination[page]=${3}&pagination[pageSize]=${1}&filters[category]=${1}`);
                 const data: ApiResponse = await response.json();
 
                 const extractedData: ExtractedData[] = data.data.map((item: Item) => ({
