@@ -6,7 +6,6 @@ import logo from "../../../public/icons/logo.svg"
 import { ShoppingCart } from "../ui/ShoppingCart/ShoppingCart"
 import { BurgerMenu } from "../ui/BurgerMenu/BurgerMenu"
 import Link from 'next/link'
-import { isWindowBigger } from "../utils/assets/useWindowWitdthResize/useWindowWitdthResize"
 
 export function Header() {
     // console.log(window.location.pathname)
