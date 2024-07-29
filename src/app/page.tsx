@@ -7,7 +7,6 @@ import { ProductCard } from "../components/ProductCard/ProductCard";
 import { CardList } from "../components/CardList/CardList";
 import { DynamicPlaceholderBlur } from "@/components/DynamicPlaceholderBlur/DynamicPlaceholderBlur";
 import { Sidebar } from "@/components/Sidebar/Sidebar";
-import { productDataClient } from "@/components/utils/dataReceiver/ProductDataClient";
 import { MapProductCards } from "@/components/ProductCard/MapProductCards";
 import { Pagination } from "@/components/Pagination/Pagination";
 
