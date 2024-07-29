@@ -19,7 +19,7 @@
 
     .blur.active {
         background: rgba(21, 20, 19, 0.5);
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px); // (safary 9 released in 2015 )
         transition: 1s;
     }
 

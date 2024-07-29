@@ -18,7 +18,7 @@ export function Button({ onClick, children, style }: Props) {
         [style]: style
     });
 
-    const [width, setWidth] = React.useState<number>(0);
+    // const [width, setWidth] = React.useState<number>(0);
 
 
     return (

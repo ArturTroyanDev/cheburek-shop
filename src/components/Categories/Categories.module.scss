@@ -1,0 +1,40 @@
+.categoriesContainer {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    gap: 16px;
+
+
+    .item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: rgba(162, 162, 162);
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        cursor: pointer;
+
+        .title {
+            font-size: 16px;
+        }
+    }
+
+    .itemActive {
+        color: rgba(255, 255, 255);
+        font-size: 16px;
+
+    }
+
+}
+
+@media (min-width: 1215px) {
+    .categoriesContainer {
+        .item {
+            color: rgba(162, 162, 162);
+        }
+
+        .itemActive {
+            color: rgba(21, 20, 19, 1);
+        }
+
+    }
+}

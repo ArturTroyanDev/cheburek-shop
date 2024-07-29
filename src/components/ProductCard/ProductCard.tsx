@@ -9,46 +9,71 @@ import plus from "../../../public/icons/plus.svg"
 import minus from "../../../public/icons/minus.svg"
 import { DynamicPlaceholderBlur } from '../DynamicPlaceholderBlur/DynamicPlaceholderBlur';
 
+import { useSelector, useDispatch } from 'react-redux';
+import type { RootState } from '../utils/redux/store'
+import { setProductCount } from '../utils/redux/slices/conterSlice'
+import { setProductPopUpFlag } from '../utils/redux/slices/flagSlice'
+
+
 type Props = {
-    image: string,
+    image?: string,
     title: string,
     price: number,
 
+    src?: any,
     alt?: string,
     width?: number,
     height?: number,
-    child?: React.ReactNode;
+
+    child?: React.ReactNode,
+    id?: number,
 }
 
-export function ProductCard({ image, title, price, alt, width, height, child }: Props) {
-    const [popupActive, setPopupActive] = React.useState(false)
-    const { productCount, setProductCount } = useContextValue();
-    const { sidebarFlag, setSidebarFlag } = useContextValue();
+export function ProductCard({ image, title, price, child, id, src, alt, width, height }: Props) {
+    const dispatch = useDispatch()
+    const productCount = useSelector((state: RootState) => state.counter.productCount)
+    const popupFlag = useSelector((state: RootState) => state.flag.ProductPopUpFlag)
 
-    
+    const onChangeProductCount = (value: number) => {
+        dispatch(setProductCount(value))
+    }
 
-    const buttonState = () => {
+    const handleChange = (flag: boolean) => {
+        dispatch(setProductPopUpFlag(flag))
+    }
+
+
+
+
+    const QuantityButton = () => {
         if (productCount === 0) {
             return <Button onClick={() => {
-                setPopupActive(true)
-                setSidebarFlag(false)
+                handleChange(true)
+                // setSidebarFlag(false)
             }
+
+                // WHEN I clicked at sidebar, its true, when I clicked at button sidebar false but button is 
 
             }>{'Додати в кошик'}</Button>
         }
+
         return (
             <div className={styles.doubleButton}>
-                <Button style={styles.btnMinus} onClick={() => setProductCount(productCount - 1)}>
+                <Button style={styles.btnMinus} onClick={() => onChangeProductCount(productCount - 1)}>
                     <Image
                         className={styles.imgMinus}
                         src={minus}
                         alt="-"
                     />
                 </Button>
+
+
                 {"У кошику: " + productCount}
+
+
+
                 <Button style={styles.btnPlus} onClick={() => {
-                    setPopupActive(true)
-                    setSidebarFlag(false)
+                    handleChange(true)
                 }
                 }>
                     <Image
@@ -59,28 +84,36 @@ export function ProductCard({ image, title, price, alt, width, height, child }: 
                 </Button>
             </div >
         )
+
+
+
+
     }
 
-    // if popup active set sidebar false
-    // const overflow =  document.body.style.overflow;
-    // make if the sidebar is active, when u click on outside the sidebar, it hide
-
-
-    popupActive ? document.body.style.overflow = 'hidden' :  document.body.style.overflow = 'unset' // here is bag. When I click on the sidebar and then open a popup, scroll continues work  
-
-
-    console.log("popup: " + popupActive)
+    popupFlag ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset'
     return (
         <div className={styles.block}>
 
             {/* <DynamicPlaceholderBlur src={image} alt={alt} width={width} height={height} /> */}
             {child}
 
+            <Image
+                className={styles.image}
+                src={src}
+                alt={'productCart'}
+                width={width}
+                height={height}
+                priority
+
+            />
+
             <div className={styles.content}>
                 <h4 className={styles.title}>{title}</h4>
                 <div className={styles.price}>{price + "₴"}</div>
-                {buttonState()}
-                <ProductPopup active={popupActive} setActive={setPopupActive} image={image} title={title} price={price} />
+
+                {QuantityButton()}
+
+                <ProductPopup flag={popupFlag} setFlag={handleChange} image={image} title={title} price={price} />
             </div>
         </div>
     )

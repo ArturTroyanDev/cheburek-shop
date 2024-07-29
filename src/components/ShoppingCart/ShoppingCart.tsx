@@ -5,12 +5,14 @@ import cart from "../../../public/icons/ShoppingCart.svg"
 import styles from './ShoppingCart.module.scss'
 import { useContextValue } from "../../context/ContextValue";
 import Link from 'next/link'
+import { useSelector } from 'react-redux';
+import type { RootState  } from '../utils/redux/store';
+
 
 
 
 export function ShoppingCart() {
-    const { productCount } = useContextValue()
-    // const [open, setOpen] = React.useState(false);
+    const productCount = useSelector((state: RootState) => state.counter.productCount)
 
 
     return (

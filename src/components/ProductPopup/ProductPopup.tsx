@@ -7,35 +7,50 @@ import { Button } from "../Button/Button";
 import { useContextValue } from "../../context/ContextValue";
 import { FoodSupplements } from "../FoodSupplements/FoodSupplements";
 
+import { useSelector, useDispatch } from 'react-redux';
+import type { RootState } from '../utils/redux/store'
+import { setProductCount } from '../utils/redux/slices/conterSlice'
+
+
 
 type Props = {
-    active: boolean,
-    setActive: any,
+    flag: boolean,
+    setFlag: any,
     children?: React.ReactNode,
-    image: string,
+    image?: string,
     title: string,
     price: number
 }
 
-export function ProductPopup({ active, setActive, image, title, price, children }: Props) {
+export function ProductPopup({ flag, setFlag, image, title, price, children }: Props) {
 
-    const { productCount, setProductCount } = useContextValue();
+    const dispatch = useDispatch()
 
-    const click = () => {
-        setProductCount(productCount + 1)
-        setActive(false)
+
+    const productCount = useSelector((state: RootState) => state.counter.productCount)
+
+    const incrementCount = (value: number) => {
+        dispatch(setProductCount(value))
     }
 
+    const onChangeCount = () => {
+        incrementCount(productCount + 1)
+        setFlag(false)
+    }
+
+
+
+
     const isPopupActive = classNames(styles.popup, {
-        [styles.active]: active
+        [styles.active]: flag
     });
 
     const isPopupContainerActive = classNames(styles.container, {
-        [styles.active]: active
+        [styles.active]: flag
     });
 
     const isBlurActive = classNames(styles.blur, {
-        [styles.active]: active
+        [styles.active]: flag
     });
     // update this code
 
@@ -68,12 +83,12 @@ export function ProductPopup({ active, setActive, image, title, price, children 
     ]
 
     return (
-        <div className={isPopupActive} onClick={() => setActive(false)}>
+        <div className={isPopupActive} onClick={() => setFlag(false)}>
             <div className={isBlurActive}></div>
             <div className={isPopupContainerActive} onClick={e => e.stopPropagation()}> {/* preventing any parent event handlers from being executed */}
                 <div className={styles.swipeBar}></div>
                 <div className={styles.layout}>
-                    <Image
+                    {/* <Image
                         className={styles.image}
                         src={image}
                         alt="cheburek"
@@ -81,7 +96,7 @@ export function ProductPopup({ active, setActive, image, title, price, children 
                         height={328}
                         priority={true}
 
-                    />
+                    /> */}
                     <div className={styles.head}>
                         <div className={styles.info}>
                             <h4 className={styles.title}>
@@ -102,7 +117,7 @@ export function ProductPopup({ active, setActive, image, title, price, children 
 
                         </div>
 
-                        <Button style={styles.button} onClick={click}>{"Додати: " + price + "₴"}</Button>
+                        <Button style={styles.button} onClick={onChangeCount}>{"Додати: " + price + "₴"}</Button>
                     </div>
 
                 </div>

@@ -1,63 +1,70 @@
-//  {
-//     overflow: hidden;
-// }
-
-.sidebar {
-    position: fixed;
+.wrapper {
+    // top: 0;
     top: 56px;
-    display: flex;
-    flex-direction: column;
-    width: 75%;
-    max-width: 300px;
-    height: 100vh;
-    gap: 32px;
-    padding: 20px 0px 0px 10px;
-    background: rgba(21, 20, 19, 0.95);
-    z-index: 30;
-    left: -75%;
-    transition: left 0.5s;
 
-    .categoriesContainer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 32;
+    transition: 0.5s;
+
+
+
+    .sidebar {
+        position: fixed;
+        // top: 56px;
         display: flex;
         flex-direction: column;
-        width: max-content;
-        gap: 16px;
-
-        .item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: rgba(162, 162, 162);
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-            cursor: pointer;
-
-            .title {
-                font-size: 16px;
-            }
-        }
-
-        .itemActive {
-            color: rgba(255, 255, 255);
-        }
-
-        .itemActiveOnBigScreen {
-            color: rgba(21, 20, 19, 1);
-        }
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        gap: 32px;
+        padding: 20px 0px 0px 10px;
+        background: rgba(21, 20, 19, 0.95);
+        left: -75%;
+        transition: left 0.5s;
 
     }
 
+    .active {
+        left: 0%;
+
+    }
 }
 
-.active {
-    left: 0%;
+.wrapper.active {
+    pointer-events: all;
+    // background: rgba(21, 20, 19, 0.5);
+    // backdrop-filter: blur(5px); 
+    // filter: blur(10px);
+    // filter: blur(5px);
+    transition: 1s;
+    backdrop-filter: blur(5px); 
+
 }
+
+
 
 @media (min-width: 1215px) {
-    .sidebar {
-        position: sticky;
-        width: calc(300px + (365 - 300) * ((100vw - 1215px) / (1280 - 1215)));
-        max-width: 365px;
-        background: rgba(244, 241, 241, 1);
+    .wrapper {
+        all: unset;
+        position: relative;
+
+        .sidebar {
+            // position: sticky;
+            top: 56px;
+            left: auto;
+            // right: 0;
+            position: fixed;
+            width: calc(300px + (345 - 300) * ((100vw - 1215px) / (1280 - 1215)));
+            max-width: 345px; //365
+            background: rgba(244, 241, 241, 1);
+            // margin: 0px 40px 0px 0px;
+        }
+
+
     }
+
 
 }

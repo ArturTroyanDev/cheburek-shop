@@ -12,23 +12,52 @@
         max-width: 1280px;
         height: inherit;
         display: flex;
-        // justify-content: space-between;
         align-items: center;
         z-index: 10;
 
-
+        .nameWrapper {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+            gap: 8px;
+        }
 
         .logoWrapper {
-            margin-right: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
         }
+
 
         .title {
-            white-space: nowrap;
-            font-weight: 300;
+            display: none;
         }
 
+        .title,
+        .phoneNumber {
+            font-size: 16px;
+            font-weight: 300;
+            white-space: nowrap;
+            color: black;
+
+        }
+
+        .phoneNumber {
+            display: none;
+        }
+
+        .btnsWrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+
+
         .languageSwitcher {
-            width: 55px;
+            min-width: 55px;
             height: 40px;
             display: flex;
             align-items: center;
@@ -36,21 +65,64 @@
             gap: 4px;
             background: rgba(244, 241, 241, 1);
             border-radius: 20px;
-            margin-left: 8px;
         }
-        .search {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
 
-            div {
-                margin: auto auto;
-                width: 23px;
-                height: 23px;
-                background: #fff;
-                border: 1px solid #000;
-                border-radius: 50%;
+        // .search {
+        //     width: 40px;
+        //     height: 40px;
+        //     border-radius: 50%;
+
+        //     div {
+        //         margin: auto auto;
+        //         width: 23px;
+        //         height: 23px;
+        //         background: #fff;
+        //         border: 1px solid #000;
+        //         border-radius: 50%;
+        //     }
+        // }
+    }
+
+}
+
+@media (min-width: 440px) {
+    .head {
+        .header {
+            .title {
+                display: block;
+                white-space: nowrap;
+                font-weight: 300;
             }
+        }
+    }
+
+}
+
+@media (min-width: 660px) {
+    .head {
+        .header {
+            .phoneNumber {
+                display: flex;
+                width: 100%;
+                justify-content: end;
+                padding: 0px 16px 0px 32px;
+            }
+        }
+    }
+
+}
+
+@media (min-width: 1215px) {
+    .head {
+        .header {
+            .nameWrapper {
+                margin-right: unset;
+            }
+
+            .phoneNumber {
+                justify-content: start;
+            }
+
         }
     }
 

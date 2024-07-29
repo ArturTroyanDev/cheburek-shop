@@ -1,10 +1,13 @@
+"use client" ///////////////////////////////////////////////
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
-import { TypeProvider } from '../context/ContextValue';
+import { Provider } from "react-redux";
 
 import { Header } from "../components/Header/Header";
 import { Sidebar } from "../components/Sidebar/Sidebar";
+import { store } from "@/components/utils/redux/store";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,15 +28,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <TypeProvider>
+
+        <Provider store={store}>
           {/* <div className="wrapper"> */}
-            <Header />
-            <div className="container">
-              {children}
+          <Header />
+          <div className="container">
+            {children}
             {/* </div> */}
           </div>
 
-        </TypeProvider>
+
+        </Provider>
       </body>
     </html>
   );

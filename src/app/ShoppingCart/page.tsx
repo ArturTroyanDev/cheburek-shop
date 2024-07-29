@@ -1,9 +1,10 @@
 "use client"
-import { useContextValue } from "@/context/ContextValue"
 import styles from "./page.module.scss"
+import { useSelector } from 'react-redux';
+import type { RootState  } from '../../components/utils/redux/store';
 
 export default function ShoppingCart() {
-    const { productCount } = useContextValue()
+    const productCount = useSelector((state: RootState) => state.counter.productCount)
 
     return (
         <div className={styles.container}>
