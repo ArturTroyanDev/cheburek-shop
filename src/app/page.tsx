@@ -15,7 +15,7 @@ import { Pagination } from "@/components/Pagination/Pagination";
 // import Sceleton from "./loading";
 
 // decide what the sidebar should look like on pages other than the home page, and whether it should be anywhere other than the home page.
-export default async function Home() {
+export default function Home() {
 
 
   return (

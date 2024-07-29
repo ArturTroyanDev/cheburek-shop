@@ -6,7 +6,6 @@ import { Button } from "../ui/Button/Button";
 import { ProductPopup } from "../ProductPopup/ProductPopup"
 import plus from "../../../public/icons/plus.svg"
 import minus from "../../../public/icons/minus.svg"
-import { DynamicPlaceholderBlur } from '../DynamicPlaceholderBlur/DynamicPlaceholderBlur';
 
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState } from '../utils/redux/store'
