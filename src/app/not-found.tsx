@@ -1,4 +1,4 @@
-'use client'
+'use client' ///////////////////////////////////////////////
 import NotFoundBlock from "@/components/NotFoundBlock/NotFoundBlock"
 
 
