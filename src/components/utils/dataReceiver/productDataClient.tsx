@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect } from "react"
 import { useSelector } from 'react-redux'
-import type { RootState } from '../../utils/redux/store'
+import type { RootState } from '../redux/store'
 
 type ImageAttributes = {
     url: string,

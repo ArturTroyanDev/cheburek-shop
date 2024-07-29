@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect } from "react"
-import { productDataClient, productDataImageClient } from "../utils/dataReceiver/productDataClient";
+import { productDataClient } from "../utils/dataReceiver/ProductDataClient";
 import { ProductCard } from "./ProductCard";
 
 

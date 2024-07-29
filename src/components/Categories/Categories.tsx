@@ -8,7 +8,7 @@ import icon2 from "../../../public/categoryIcons/potatoes.svg"
 import icon3 from "../../../public/categoryIcons/coffee.svg"
 import icon4 from "../../../public/categoryIcons/cocoa.svg"
 import classNames from 'classnames';
-import { productDataClient } from '../utils/dataReceiver/productDataClient'
+import { productDataClient } from '../utils/dataReceiver/ProductDataClient'
 import { useContextValue } from '@/context/ContextValue'
 import { useSelector, useDispatch } from 'react-redux'
 import type { RootState } from '../utils/redux/store'
