@@ -1,5 +1,5 @@
 "use client"
-import { ProductDataClient } from "../utils/dataReceiver/ProductDataClient";
+// import { ProductDataClient } from "../utils/dataReceiver/ProductDataClient";
 import { ProductCard } from "./ProductCard";
 
 
@@ -8,13 +8,13 @@ import { ProductCard } from "./ProductCard";
 // image={"http://localhost:1337"+ images[obj]}
 
 export function MapProductCards() {
-    const data = ProductDataClient();
+    // const data = ProductDataClient();
 
 
 
     return (
         <>
-            {data.map((obj: any) => <ProductCard id={obj.id} key={obj.id} title={obj.title} price={obj.price} src={"http://localhost:1337" + obj.imageUrl} width={300} height={240} />)}
+            {/* {data.map((obj: any) => <ProductCard id={obj.id} key={obj.id} title={obj.title} price={obj.price} src={"http://localhost:1337" + obj.imageUrl} width={300} height={240} />)} */}
         </>
     )
 }
