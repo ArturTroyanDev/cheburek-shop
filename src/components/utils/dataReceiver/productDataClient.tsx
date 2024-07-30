@@ -2,6 +2,7 @@
 import React from "react"
 import { useSelector } from 'react-redux'
 import type { RootState } from '../redux/store'
+import axios from "axios"
 
 type ImageAttributes = {
     url: string,
@@ -43,15 +44,16 @@ interface ExtractedData {
 export const ProductDataClient = () => {
     const [items, setItems] = React.useState<ExtractedData[]>([]);
     const categoryId = useSelector((state: RootState) => state.filter.categoryId)
-
+    const currentPage = useSelector((state: RootState) => state.filter.currentPage)
+    console.log(currentPage)
 
     React.useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://localhost:1337/api/chebureks?populate=*&pagination[page]=${3}&pagination[pageSize]=${1}&filters[category]=${categoryId}`);
-                const data: ApiResponse = await response.json();
+                const response = await axios.get(`http://localhost:1337/api/chebureks?populate=*&pagination[page]=${currentPage}&pagination[pageSize]=${1}&filters[category]=${categoryId}`);
+                // const data: ApiResponse = await response.json();
 
-                const extractedData: ExtractedData[] = data.data.map((item: Item) => ({
+                const extractedData: ExtractedData[] = response.data.data.map((item: Item) => ({
                     id: item.id,
                     title: item.attributes.title,
                     price: item.attributes.price,
@@ -67,7 +69,7 @@ export const ProductDataClient = () => {
         }
 
         fetchData()
-    }, [categoryId])
+    }, [categoryId, currentPage])
 
     return items
 }

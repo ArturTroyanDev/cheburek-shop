@@ -18,7 +18,7 @@ export default function Home() {
     <div className="wrapper">
       <Sidebar />
       <CardList>
-        {/* <MapProductCards /> */}
+        <MapProductCards />
       </CardList>
     </div>
   );
