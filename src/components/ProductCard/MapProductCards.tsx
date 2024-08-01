@@ -1,6 +1,6 @@
 "use client"
-// import { ProductDataClient } from "../utils/dataReceiver/ProductDataClient";
-import { ProductCard } from "./ProductCard";
+import { ProductDataClient } from "../utils/dataReceiver/ProductDataClient";
+// import { ProductCard } from "./ProductCard";
 
 
 // data.map((obj: any) => <ProductCard id={obj.id} key={obj.id} title={obj.attributes.title} price={obj.attributes.price} />)

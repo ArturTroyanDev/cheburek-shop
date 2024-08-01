@@ -5,6 +5,7 @@ type Props = {
     currentPage: number,
     onChangePage: (number: number) => void,
 }
+
 export function Pagination({ currentPage, onChangePage }: Props) {
 
     return (

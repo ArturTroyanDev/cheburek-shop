@@ -23,9 +23,14 @@ const filterSlice = createSlice({
         setCurrentPage(state, action: PayloadAction<number>) { // method
             state.currentPage = action.payload
         },
+        setFilters(state, action) {
+            state.categoryId = Number(action.payload.categoryId);
+            state.currentPage = Number(action.payload.currentPage);
+            // console.log(action)
+        }
     }
 });
 
-export const { setCategoryId, setCurrentPage } = filterSlice.actions //redusers are stored in the actions
+export const { setCategoryId, setCurrentPage, setFilters } = filterSlice.actions //redusers are stored in the actions
 
 export default filterSlice.reducer

@@ -1,4 +1,8 @@
 /* RESET */
+
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
+
 *,
 *::before,
 *::after {
@@ -8,6 +12,9 @@
   box-sizing: border-box;
   font-size: 12px;
   font-weight: 400;
+  // font-family: "League Gothic";
+  font-family: sans-serif;
+
 }
 
 a {
@@ -59,7 +66,7 @@ body {
   color: black;
   background-color: rgb(255, 255, 255);
   // overflow: hidden;body, html {
-    // overflow-x: hidden;
+  // overflow-x: hidden;
 
 }
 
@@ -79,6 +86,7 @@ main {
   max-width: 1280px;
   padding: 0px 10px;
   margin: 0 auto;
+  // font-family: inherit;
 }
 
 .header__container {

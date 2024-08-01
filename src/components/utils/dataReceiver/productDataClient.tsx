@@ -1,8 +1,13 @@
 "use client"
 import React from "react"
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import type { RootState } from '../redux/store'
 import axios from "axios"
+import qs from "qs"
+import { useRouter } from 'next/navigation'
+import { setFilters } from "../redux/slices/filterSlice"
+
+
 
 type ImageAttributes = {
     url: string,
@@ -42,12 +47,15 @@ interface ExtractedData {
 }
 
 export const ProductDataClient = () => {
+    const dispatch = useDispatch()
+    const router = useRouter()
+    const isSearch = React.useRef(false)
+    const isMounted = React.useRef(false)
     const [items, setItems] = React.useState<ExtractedData[]>([]);
     const categoryId = useSelector((state: RootState) => state.filter.categoryId)
     const currentPage = useSelector((state: RootState) => state.filter.currentPage)
-    console.log(currentPage)
 
-    React.useEffect(() => {
+    const fetchChebureks = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(`http://localhost:1337/api/chebureks?populate=*&pagination[page]=${currentPage}&pagination[pageSize]=${1}&filters[category]=${categoryId}`);
@@ -69,6 +77,45 @@ export const ProductDataClient = () => {
         }
 
         fetchData()
+    }
+
+
+
+    React.useEffect(() => {
+        if (window.location.search) {
+            const params = qs.parse(window.location.search.substring(1))
+            dispatch(
+                setFilters({
+                    ...params
+                })
+            )
+            isSearch.current = true
+        }
+    }, []);
+
+
+
+    React.useEffect(() => {
+        if (!isSearch.current) {
+            fetchChebureks();
+        }
+
+        isSearch.current = false;
+    }, [categoryId, currentPage])
+
+
+
+    React.useEffect(() => {
+        if (isMounted.current) {
+            const queryString = qs.stringify({
+                categoryId,
+                currentPage
+            })
+
+            router.push(`?${queryString}`)
+        }
+
+        isMounted.current = true;
     }, [categoryId, currentPage])
 
     return items
