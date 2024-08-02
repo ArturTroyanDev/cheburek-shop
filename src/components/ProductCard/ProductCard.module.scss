@@ -53,31 +53,7 @@
         }
     }
 
-    .doubleButton {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 8px 8px 8px 8px;
-        border: 1px solid rgba(201, 62, 1, 1);
-        border-radius: 60px;
 
-        .btnPlus,
-        .btnMinus {
-            all: unset;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 26px;
-            cursor: pointer;
-        }
-
-        .imgPlus,
-        .imgMinus {
-            width: auto;
-            height: auto;
-        }
-    }
 }
 
 

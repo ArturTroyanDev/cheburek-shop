@@ -32,11 +32,11 @@ type Item = {
     attributes: ItemAttributes
 }
 
-interface ApiResponse {
-    data: [
-        data: Item
-    ],
-}
+// interface ApiResponse { 
+//     data: [
+//         data: Item
+//     ],
+// }
 
 interface ExtractedData {
     id: number,
@@ -80,7 +80,7 @@ export const ProductDataClient = () => {
     }
 
 
-
+    // if there was a first render, we check the urls parameters and save them in redux
     React.useEffect(() => {
         if (window.location.search) {
             const params = qs.parse(window.location.search.substring(1))
@@ -89,12 +89,11 @@ export const ProductDataClient = () => {
                     ...params
                 })
             )
-            isSearch.current = true
+            // isSearch.current = true
         }
     }, []);
 
-
-
+    // if there was a first render we need to fetch data
     React.useEffect(() => {
         if (!isSearch.current) {
             fetchChebureks();
@@ -103,8 +102,7 @@ export const ProductDataClient = () => {
         isSearch.current = false;
     }, [categoryId, currentPage])
 
-
-
+    // if parameters is changed and first render happend save parameters in redux
     React.useEffect(() => {
         if (isMounted.current) {
             const queryString = qs.stringify({
