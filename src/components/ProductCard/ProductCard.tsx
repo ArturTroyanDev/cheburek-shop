@@ -35,7 +35,7 @@ export function ProductCard({ image, title, price, child, id, src, alt, width, h
         dispatch(setProductCount(value))
     }
 
-    const handleChangeProductPopUpFlag = (flag: boolean) => {
+    const handeChangeProductPopUpFlag = (flag: boolean) => {
         dispatch(setProductPopUpFlag(flag))
     }
     popupFlag ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset'
@@ -56,14 +56,14 @@ export function ProductCard({ image, title, price, child, id, src, alt, width, h
                 <h4 className={styles.title}>{title}</h4>
                 <div className={styles.price}>{price + "₴"}</div>
                 {!productCount ?
-                    <Button onClick={() => { handleChangeProductPopUpFlag(true) }}>{'Додати в кошик'}</Button> :
+                    <Button onClick={() => { handeChangeProductPopUpFlag(true) }}>Додати в кошик</Button> :
                     <DoubleButton
-                        children={"У кошику: " + productCount}
+                        count={productCount}
                         onClickDecrease={() => onChangeProductCount(productCount - 1)}
-                        onClickIncrease={() => handleChangeProductPopUpFlag(true)}
+                        onClickIncrease={() => handeChangeProductPopUpFlag(true)}
                     />
                 }
-                <ProductPopup flag={popupFlag} setFlag={handleChangeProductPopUpFlag} image={image} title={title} price={price} />
+                <ProductPopup flag={popupFlag} setFlag={handeChangeProductPopUpFlag} image={image} title={title} price={price} />
             </div>
         </div>
     )

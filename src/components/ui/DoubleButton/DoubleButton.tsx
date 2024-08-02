@@ -9,10 +9,10 @@ import Image from 'next/image'
 interface Props {
     onClickDecrease?: () => void,
     onClickIncrease?: () => void,
-    children?: React.ReactNode
+    count?: number,
 }
 
-export default function DoubleButton({ children, onClickDecrease, onClickIncrease }: Props) {
+export default function DoubleButton({ onClickDecrease, onClickIncrease, count }: Props) {
 
     return (
         <div className={styles.doubleButton}>
@@ -23,7 +23,7 @@ export default function DoubleButton({ children, onClickDecrease, onClickIncreas
                     alt="-"
                 />
             </Button>
-            {children}
+            <div>у кошику {count}</div>
             <Button style={styles.btnPlus} onClick={onClickIncrease}>
                 <Image
                     className={styles.imgPlus}
