@@ -1,39 +1,9 @@
-// .buttonWrap {
-//     width: max-content;
-//     height: max-content;
-
-
-
     .button {
-        // margin: 10px 0px 10px 0px;
         width: 100%; // percentage of width from the product card
-        // width: 280px;
-        // display: block;
         padding: 10px 0px 10px 0px;
         color: white;
         background: rgba(201, 62, 1, 1);
         border: 1px solid rgba(201, 62, 1, 1);
         border-radius: 60px;
-        transition: .1s linear;
         font-size: 14px;
     }
-// }
-
-
-
-// .button:hover {
-
-//     background: rgb(255, 255, 255);
-//     color: rgba(201, 62, 1, 1);
-
-// }
-
-.button:hover {
-    // -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-.button:active {
-    transform: scale(0.99);
-    // background: rgb(255, 255, 255);
-    // color: rgba(201, 62, 1, 1);
-}

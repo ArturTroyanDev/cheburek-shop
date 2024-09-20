@@ -1,5 +1,7 @@
-.doubleButton {
+.wrapper_default {
     width: 100%;
+    max-width: 410px;
+    height: 38px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,19 +9,75 @@
     border: 1px solid rgba(201, 62, 1, 1);
     border-radius: 60px;
 
-    .btnPlus,
-    .btnMinus {
+    .btnMinus_default,
+    .btnPlus_default {
         all: unset;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 26px;
         cursor: pointer;
+        position: relative;
+        border-radius: 60px;
+        width: 25px;
+        height: 25px;
+        color: rgba(201, 62, 1, 1);
     }
 
-    .imgPlus,
-    .imgMinus {
-        width: auto;
-        height: auto;
+    .btnMinus_default::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(201, 62, 1, 1);
+        margin: auto 4px;
+        height: 2px;
+    }
+
+    .btnPlus_default {
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(201, 62, 1, 1);
+        }
+
+        &::before {
+            width: 2px;
+            margin: 5px auto;
+        }
+
+        &::after {
+            height: 2px;
+            margin: auto 5px;
+        }
+
+    }
+
+
+    .counterStyle_default {
+        font-size: 16px;
+    }
+
+    .propsBlock_default {
+        display: flex;
+        gap: 5px;
+    }
+}
+
+
+
+
+.wrapper_secondary {
+    max-width: 90px;
+    border: none;
+
+    .btnMinus_secondary,
+    .btnPlus_secondary {
+        border: 1px solid rgba(201, 62, 1, 1);
+
     }
 }

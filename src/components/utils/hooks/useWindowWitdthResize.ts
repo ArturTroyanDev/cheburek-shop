@@ -10,10 +10,7 @@ export const useWindowWitdthResize = (): number => {
 
     React.useEffect(() => {
         const handleResize = () => {
-            
             setWidth(window.innerWidth);
-        
-            
         };
         window.addEventListener('resize', handleResize);
 

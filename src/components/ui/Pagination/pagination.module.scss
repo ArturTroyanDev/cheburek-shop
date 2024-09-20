@@ -10,8 +10,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 45px;
-            height: 45px;
+            width: calc(30px + (45 - 30) * ((100vw - 320px) / (1280 - 320)));
+            max-width: 45px;
+            height: calc(30px + (45 - 30) * ((100vw - 320px) / (1280 - 320)));
+            max-height: 45px;
             border: 3px solid rgba(244, 241, 241, 1);
             border-radius: 30px;
             color: rgba(0, 0, 0, 0.678);

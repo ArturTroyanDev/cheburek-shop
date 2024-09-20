@@ -1,46 +1,28 @@
 "use client"
 import React from 'react'
 import styles from "./sidebar.module.scss"
-import Image from "next/image"
 import classNames from 'classnames';
-import { useIsWindowBigger } from "../utils/assets/useWindowWitdthResize/useWindowWitdthResize"
+import { useIsWindowBigger } from "../utils/hooks/useWindowWitdthResize"
 import { Categories } from '../Categories/Categories';
 
-import { useSelector, useDispatch } from 'react-redux'
-import type { RootState } from '../utils/redux/store'
-
-import { setCategoryId } from '../utils/redux/slices/filterSlice'
-import { setSidebarFlag } from '../utils/redux/slices/flagSlice'
+import { useAppDispatch, useAppSelector } from "@/redux/hooks"
+import { setCategoryId } from '../../redux/slices/filterSlice'
+import { toggleSidebarFlag } from '../../redux/slices/flagSlice'
 
 // console.log(process.browser)
 
 
-
+// filterSlice
 export function Sidebar(dataReceiver: any) {
-    const dispatch = useDispatch()
-    const sidebarFlag = useSelector((state: RootState) => state.flag.sidebarFlag)
-    
-    const onChangeSidebarFlag = (flag: boolean) => {
-        dispatch(setSidebarFlag(flag))
-    }
-
-
-
-    const categoryId = useSelector((state: RootState) => state.filter.categoryId)
-    
-    const onChangeCategory = (id: number) => {
-        dispatch(setCategoryId(id))
-    }
-
-
-
-
+    const dispatch = useAppDispatch()
+    const sidebarFlag = useAppSelector((state) => state.flag.sidebarFlag)
+    const categoryId = useAppSelector((state) => state.filter.categoryId)
+    useIsWindowBigger(1215) ? dispatch(toggleSidebarFlag(false)) : null
 
     React.useEffect(() => {
         sidebarFlag ? window.document.body.style.overflow = 'hidden' : window.document.body.style.overflow = 'unset';
     }, [sidebarFlag]);
 
-    useIsWindowBigger(1215) ? onChangeSidebarFlag(false) : null
 
     const isSidebarWrapperActive = classNames(styles.wrapper, {
         [styles.active]: sidebarFlag
@@ -50,10 +32,9 @@ export function Sidebar(dataReceiver: any) {
     });
 
     return (
-        <div className={isSidebarWrapperActive} onClick={() => onChangeSidebarFlag(false)}>
+        <div className={isSidebarWrapperActive} onClick={() => dispatch(toggleSidebarFlag(false))}>
             <div className={isSidebarActive} onClick={e => e.stopPropagation()}>
-                {/* <ProductSearch /> */}
-                <Categories id={categoryId} onClickCategory={onChangeCategory} />
+                <Categories id={categoryId} onClickCategory={(id: number) =>  dispatch(setCategoryId(id))} />
             </div>
         </div>
     )

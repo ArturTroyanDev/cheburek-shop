@@ -5,40 +5,40 @@ import Image from "next/image";
 import classNames from 'classnames';
 import { Button } from "../ui/Button/Button";
 import { FoodSupplements } from "../FoodSupplements/FoodSupplements";
-
-import { useSelector, useDispatch } from 'react-redux';
-import type { RootState } from '../utils/redux/store'
-import { setProductCount } from '../utils/redux/slices/conterSlice'
-
+import { useAppDispatch } from "@/redux/hooks"
+import { addProduct } from "../../redux/slices/shoppingCartSlice";
 
 
 type Props = {
     flag: boolean,
-    setFlag: any,
+    setFlag?: any,
     children?: React.ReactNode,
-    image?: string,
+    id: number,
     title: string,
-    price: number
+    price: number,
+    src: string,
+}
+interface Item {
+    id: number,
+    title: string,
+    price: number,
+    src: string,
 }
 
-export function ProductPopup({ flag, setFlag, image, title, price, children }: Props) {
-
-    const dispatch = useDispatch()
-
-
-    const productCount = useSelector((state: RootState) => state.counter.productCount)
-
-    const incrementCount = (value: number) => {
-        dispatch(setProductCount(value))
-    }
-
-    const onChangeCount = () => {
-        incrementCount(productCount + 1)
+export function ProductPopup({ flag, setFlag, id, title, price, src, children }: Props) {
+    const dispatch = useAppDispatch()
+    const onClickAdd = () => {
+        const item: Item = {
+            id,
+            title,
+            price,
+            src,
+        };
+        // console.log(item.id)
+        dispatch(addProduct(item))
         setFlag(false)
     }
-
-
-
+    // console.log(title)
 
     const isPopupActive = classNames(styles.popup, {
         [styles.active]: flag
@@ -51,8 +51,6 @@ export function ProductPopup({ flag, setFlag, image, title, price, children }: P
     const isBlurActive = classNames(styles.blur, {
         [styles.active]: flag
     });
-    // update this code
-
 
     const supplements = [
         {
@@ -80,11 +78,12 @@ export function ProductPopup({ flag, setFlag, image, title, price, children }: P
             "category": 2,
         }
     ]
+    // console.log(id)
 
     return (
-        <div className={isPopupActive} onClick={() => setFlag(false)}>
+        <div className={isPopupActive} onClick={() => {setFlag(false)}}>
             <div className={isBlurActive}></div>
-            <div className={isPopupContainerActive} onClick={e => e.stopPropagation()}> {/* preventing any parent event handlers from being executed */}
+            <div className={isPopupContainerActive} onClick={e => e.stopPropagation()}>
                 <div className={styles.swipeBar}></div>
                 <div className={styles.layout}>
                     {/* <Image
@@ -105,18 +104,16 @@ export function ProductPopup({ flag, setFlag, image, title, price, children }: P
                                 {price + "₴"}
                             </div>
                         </div>
-
                         <div className={styles.supplements}>
                             <h4 className={styles.title}>Додатково</h4>
                             <div className={styles.item}>
                                 {
-                                    supplements.map((obj) => <FoodSupplements key={obj.id} name={obj.title} price={obj.price} />)
+                                supplements.map((obj) => <FoodSupplements key={obj.id} name={obj.title} price={obj.price} />)
                                 }
                             </div>
-
                         </div>
-
-                        <Button style={styles.button} onClick={onChangeCount}>{"Додати: " + price + "₴"}</Button>
+                        <Button className={styles.button} onClick={onClickAdd}>{"Додати: " + price + "₴"}</Button>
+                        {/* When I open any product the info what i get from productCard alredy wrond */}
                     </div>
 
                 </div>

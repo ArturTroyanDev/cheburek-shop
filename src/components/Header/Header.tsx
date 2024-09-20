@@ -6,18 +6,19 @@ import logo from "../../../public/icons/logo.svg"
 import { ShoppingCart } from "../ui/ShoppingCart/ShoppingCart"
 import { BurgerMenu } from "../ui/BurgerMenu/BurgerMenu"
 import Link from 'next/link'
+import { usePathname } from "next/navigation"
 
 export function Header() {
-    // console.log(window.location.pathname)
-
-
+    const pathname = usePathname()
 
     return (
         <div className={styles.head}>
             <div className="container header__container">
                 <header className={styles.header}>
                     <div className={styles.nameWrapper}>
-                        <BurgerMenu />
+                        
+                    {pathname !== '/ShoppingCart' ? <BurgerMenu /> : null}
+                        
                         <Link href="/" className={styles.logoWrapper}>
                             <Image src={logo} alt="" priority />
                             <h2 className={styles.title}>CHEBUREK & PONCHIK </h2>

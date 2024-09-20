@@ -4,12 +4,12 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 
 export interface flagTypes {
     sidebarFlag: boolean,
-    // ProductPopUpFlag: boolean
+    productPopUpFlag: boolean
 }
 
 const initialState: flagTypes = {
     sidebarFlag: false,
-    // ProductPopUpFlag: false
+    productPopUpFlag: false
 
 };
 
@@ -17,15 +17,14 @@ const flagSlice = createSlice({
     name: 'flags',
     initialState,
     reducers: {
-        setSidebarFlag(state, action: PayloadAction<boolean>) { // method
+        toggleSidebarFlag(state, action: PayloadAction<boolean>) { // method
             state.sidebarFlag = action.payload
         },
-        // setProductPopUpFlag(state, action: PayloadAction<boolean>) { // method
-        //     state.ProductPopUpFlag = action.payload
-        // }
+        setProductPopUpFlag(state, action: PayloadAction<boolean>) { // method
+            state.productPopUpFlag = action.payload
+        }
     }
 });
 
-export const { setSidebarFlag } = flagSlice.actions
-
+export const { toggleSidebarFlag, setProductPopUpFlag } = flagSlice.actions
 export default flagSlice.reducer

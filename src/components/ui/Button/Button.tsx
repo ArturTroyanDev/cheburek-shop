@@ -8,14 +8,14 @@ type Props = {
     // className: any,
     onClick?: () => void,
     children?: React.ReactNode
-    style?: any,
+    className?: any,
 }
 
 
 
-export function Button({ onClick, children, style }: Props) {
+export function Button({ onClick, children, className }: Props) {
     const isStylesSet = classNames(styles.button, {
-        [style]: style
+        [className]: className
     });
 
     // const [width, setWidth] = React.useState<number>(0);

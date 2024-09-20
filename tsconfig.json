@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "src/components/ui/ShoppingCart"  ],
+, "src/components/ui/ShoppingCart", "src/components/utils/assets/useScrollBlock.js"  ],
   "exclude": [
     "node_modules"
   ]

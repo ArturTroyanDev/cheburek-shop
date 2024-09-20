@@ -1,12 +1,13 @@
 "use client"
 import React from "react"
 import { useDispatch, useSelector } from 'react-redux'
-import type { RootState } from '../redux/store'
+import type { RootState } from '../../utils/redux/store'
 import axios from "axios"
 import qs from "qs"
 import { useRouter } from 'next/navigation'
-import { setFilters } from "../redux/slices/filterSlice"
-
+import { setFilters } from "../../utils/redux/slices/filterSlice"
+import image from '../../../../public/foodPhotos/for_1920px_screens/cheburek1_428x380px.jpg'
+import { useAppDispatch, useAppSelector } from "@/redux/hooks"
 
 
 type ImageAttributes = {
@@ -47,18 +48,18 @@ interface ExtractedData {
 }
 
 export const ProductDataClient = () => {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     const router = useRouter()
     const isSearch = React.useRef(false)
     const isMounted = React.useRef(false)
     const [items, setItems] = React.useState<ExtractedData[]>([]);
-    const categoryId = useSelector((state: RootState) => state.filter.categoryId)
-    const currentPage = useSelector((state: RootState) => state.filter.currentPage)
+    const categoryId = useAppSelector((state) => state.filter.categoryId)
+    const currentPage = useAppSelector((state) => state.filter.currentPage)
 
     const fetchChebureks = () => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:1337/api/chebureks?populate=*&pagination[page]=${currentPage}&pagination[pageSize]=${1}&filters[category]=${categoryId}`);
+                const response = await axios.get(`http://localhost:1337/api/chebureks?populate=*&pagination[page]=${currentPage}&pagination[pageSize]=${16}&filters[category]=${categoryId}`);
                 // const data: ApiResponse = await response.json();
 
                 const extractedData: ExtractedData[] = response.data.data.map((item: Item) => ({
@@ -66,7 +67,7 @@ export const ProductDataClient = () => {
                     title: item.attributes.title,
                     price: item.attributes.price,
                     category: item.attributes.category,
-                    imageUrl: item.attributes.image.data[0].attributes.url,
+                    imageUrl: item.attributes.image.data[0].attributes.url || '../../../../public/foodPhotos/for_1920px_screens/cheburek1_428x380px.jpg',
                     // imageUrlData: item.attributes.image.data,
                 }));
 
